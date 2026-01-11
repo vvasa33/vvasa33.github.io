@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optional: Customize scrollbar for better aesthetics */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f7f5e8;
+  border-left: 1px solid #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #000;
+  border: 2px solid #f7f5e8;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2a2a2a;
+}
+
+@layer utilities {
+  .bg-paper {
+    background-color: #f7f5e8;
+    background-image: 
+      radial-gradient(rgba(42, 42, 42, 0.07) 1px, transparent 1px), 
+      url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
+    background-size: 6px 6px, auto;
+    background-blend-mode: normal;
+  }
+  
+  .bg-noise {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='1'/%3E%3C/svg%3E");
+  }
+
+  .img-print-look {
+    filter: grayscale(100%) contrast(1.2) brightness(1.1);
+    mix-blend-mode: multiply;
+  }
+  
+  .halftone-wrap {
+    position: relative;
+    contain: content; /* Performance optimization */
+  }
+  
+  /* Add a half-tone overlay for images to give them the dot pattern */
+  .halftone-wrap::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, #000 1px, transparent 1.5px);
+    background-size: 4px 4px;
+    opacity: 0.2;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  @keyframes ticker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .animate-ticker {
+    animation: ticker 30s linear infinite;
+    will-change: transform; /* Hint for browser optimization */
+    backface-visibility: hidden;
+  }
+}

@@ -1,0 +1,425 @@
+{
+  "meta": {
+    "title": "Security Engineer & Developer",
+    "description": "Portfolio of Viswanath Vasa, a Security Engineer and Developer specializing in secure software, IoT, and cloud architecture.",
+    "canonical": "/"
+  },
+  "personal": {
+    "name": "Viswanath Vasa",
+    "role": "Security Engineer && Developer",
+    "motto": "Building secure systems, one line of code at a time.",
+    "phone": "240-422-9783",
+    "email": "vvasa@terpmail.umd.edu",
+    "website": "vvasa33.github.io",
+    "linkedin": "https://linkedin.com/in/visu-vasa",
+    "github": "https://github.com/vvasa33"
+  },
+  "hero": {
+    "newspaperTitle": "The Programmer Times",
+    "ticker": [
+      {
+        "symbol": "IOT",
+        "text": "SENSEGUARD ACHIEVES 50% COST REDUCTION IN IOT MONITORING",
+        "change": 80.0,
+        "trend": "up"
+      },
+      {
+        "symbol": "SECURITY",
+        "text": "CERTIFICATIONS FOUND TO DEMONSTRATE SKILLS IN NETWORK SECURITY",
+        "change": 35.0,
+        "trend": "up"
+      },
+      {
+        "symbol": "CLOUD",
+        "text": "VASA HAS WORKED ON MULTIPLE CLOUD PROJECTS AND ARCHITECTED HIGHLY SCALABLE SYSTEMS",
+        "change": 60.0,
+        "trend": "up"
+      },
+      {
+        "symbol": "VISU",
+        "text": "VISU HAS FOUND OUT HE LOVES RASPBERRY PIE",
+        "change": 15.0,
+        "trend": "up"
+      }
+    ],
+    "metrics": {
+      "left": [],
+      "right": []
+    },
+    "blurbs": {
+      "professionalOverview": {
+        "title": "Professional Overview",
+        "icon": "ScrollText",
+        "date": "January 3, 2026",
+        "author": "Viswanath Vasa",
+        "tag": "FEATURED",
+        "paragraphs": [
+          "Hey! I’m Viswanath (Visu), a Computer Science and Applied Mathematics major at the University of Maryland specializing in Cybersecurity and Networking. Throughout my life, I’ve always had a passion for learning and programming, and this portfolio is my love letter to the field in general. The people I’ve met, the projects I’ve worked on, and the concepts I’ve learned have all led up to where I am today.",
+          "As you peruse the portfolio, feel free to contact me with any questions you have about any projects! You can contact me at vvasa@terpmail.umd.edu, or check out my LinkedIn or my Github pages to learn more!"
+        ],
+        "sidebar": [
+          {
+            "title": "Key Expertise",
+            "content": "Security architecture, IoT systems, cloud infrastructure, and full-stack development.",
+            "color": "bg-cmyk-yellow"
+          },
+          {
+            "title": "Availability",
+            "content": "Open to full-time, contract, and consulting opportunities in security engineering and technical leadership roles.",
+            "color": "bg-cmyk-cyan"
+          },
+          {
+            "title": "Proven Impact",
+            "content": "Reduced operational costs by 80%, achieved 99.9% system uptime, and scaled networks to 15km+ range.",
+            "color": "bg-highlighter-green"
+          }
+        ]
+      },
+      "technicalApproach": {
+        "title": "Technical Approach",
+        "icon": "Cpu",
+        "date": "January 3, 2026",
+        "author": "Viswanath Vasa",
+        "tag": "EDITORIAL",
+        "paragraphs": [
+          "Security-first development doesn't mean sacrificing speed or innovation. I implement \"Shift Left\" security practices, integrating vulnerability analysis and threat modeling from day one. This proactive approach has consistently reduced security incidents by over 90% across projects I've led.",
+          "My technical stack emphasizes both performance and protection: React and Next.js for responsive frontends, Node.js and TypeScript for type-safe backends, and automated CI/CD pipelines for reliable deployments. I architect systems that scale efficiently while maintaining strict security standards—proven by SenseGuard's 10+ year battery life and 99.9% uptime metrics."
+        ],
+        "sidebar": [
+          {
+            "title": "Security First",
+            "content": "Zero-trust architecture, threat modeling, and vulnerability assessment integrated from day one.",
+            "color": "bg-cmyk-magenta"
+          },
+          {
+            "title": "Tech Stack",
+            "content": "React, Next.js, TypeScript, Node.js, AWS, Docker, and modern CI/CD pipelines.",
+            "color": "bg-cmyk-yellow"
+          },
+          {
+            "title": "Performance",
+            "content": "99.9% uptime, 10+ year battery life, and sub-second response times.",
+            "color": "bg-highlighter-green"
+          }
+        ]
+      },
+      "letsConnect": {
+        "title": "Let's Connect",
+        "icon": "Radio",
+        "date": "January 3, 2026",
+        "author": "Viswanath Vasa",
+        "tag": "CONTACT",
+        "paragraphs": [
+          "I'm open to discussing opportunities in security engineering, full-stack development, and technical leadership roles. Whether you're building secure infrastructure, scaling IoT systems, or need expertise in cloud architecture, I'd be interested in exploring how I can contribute.",
+          "Available for full-time positions, consulting engagements, and technical advisory roles. Reach out via email at <a href=\"mailto:vvasa@terpmail.umd.edu\" class=\"font-bold underline text-cmyk-cyan hover:text-cmyk-magenta transition-colors\">vvasa@terpmail.umd.edu</a> or connect with me on <a href=\"https://linkedin.com/in/visu-vasa\" class=\"font-bold underline text-cmyk-cyan hover:text-cmyk-magenta transition-colors\" target=\"_blank\" rel=\"noopener noreferrer\">LinkedIn</a>."
+        ],
+        "sidebar": [
+          {
+            "title": "Current Focus",
+            "content": "Security engineering, IoT systems architecture, and cloud-native development.",
+            "color": "bg-cmyk-cyan"
+          },
+          {
+            "title": "Availability",
+            "content": "Open to full-time roles, consulting projects, and technical advisory positions.",
+            "color": "bg-highlighter-green"
+          },
+          {
+            "title": "Contact Methods",
+            "content": "Email preferred, LinkedIn messages welcome. Open to virtual and in-person opportunities.",
+            "color": "bg-cmyk-magenta"
+          }
+        ]
+      }
+    }
+  },
+  "featured": {
+    "title": "SenseGuard, Inc.",
+    "role": "Full-Stack Developer & IoT Systems Engineer",
+    "roleLabel": "Featured Project",
+    "description": [
+      "Designed and deployed a full-stack security monitoring platform processing 1,000+ telemetry events per day across distributed IoT systems. The platform provides real-time monitoring and analytics for industrial safety and operational efficiency.",
+      "Containerized backend services using Docker and deployed to Google Cloud Platform, supporting CI/CD workflows and maintaining 99.9% service availability. Configured and provisioned 200+ IoT sensors and gateways across 50+ sites, validating end-to-end data pipelines and standardizing device onboarding procedures."
+    ],
+    "period": "Sep. 2025 - Present",
+    "status": "Active Project",
+    "website": "https://senseguard.dev",
+    "stats": [
+      {
+        "label": "Daily Events",
+        "value": "1,000+",
+        "icon": "Activity",
+        "color": "text-cmyk-cyan"
+      },
+      {
+        "label": "Service Uptime",
+        "value": "99.9%",
+        "icon": "CheckCircle",
+        "color": "text-highlighter-green"
+      },
+      {
+        "label": "IoT Devices",
+        "value": "200+",
+        "icon": "Wifi",
+        "color": "text-cmyk-magenta"
+      },
+      {
+        "label": "Deployment Sites",
+        "value": "50+",
+        "icon": "MapPin",
+        "color": "text-cmyk-yellow"
+      }
+    ],
+    "techStack": ["React", "Node.js", "PostgreSQL", "Docker", "Google Cloud Platform", "IoT"],
+    "company": "SenseGuard, Inc.",
+    "companyLogo": "https://placehold.co/400x400/000000/FFFFFF/png?text=SG",
+    "featuredImage": "https://placehold.co/1200x800/e5e7eb/000000/png?text=SenseGuard+System+Architecture"
+  },
+  "experience": [
+    {
+      "title": "Researcher & Lead Full-Stack Developer",
+      "company": "Empowering Secure Elections Laboratory",
+      "location": "College Park, MD",
+      "period": "May 2025 – Present",
+      "description": "Leading full-stack development for secure election training systems with focus on mobile security and data integrity.",
+      "achievements": [
+        "Engineered a secure full-stack Flutter mobile application with a Firebase backend, implementing authentication, role-based access control, and encrypted client-server communication for 2,000+ users.",
+        "Designed an offline-first SQLite data pipeline with asynchronous cloud synchronization, ensuring reliable data integrity, auditability, and fault tolerance for 1,000+ user accounts.",
+        "Developed a modular content delivery system supporting dynamic text, images, and video, enabling non-technical teams to deploy 50+ interactive training modules."
+      ],
+      "techStack": ["Flutter", "Firebase", "SQLite", "Authentication", "RBAC"],
+      "status": "Active"
+    },
+    {
+      "title": "Frontend Developer (Contract)",
+      "company": "Sunrise Scientific",
+      "location": "Towson, MD",
+      "period": "Dec. 2025 – Present",
+      "description": "Contracted frontend development focused on information architecture and user experience optimization.",
+      "achievements": [
+        "Designed and implemented information architecture and navigation flows across 15+ pages, improving usability and content discoverability for enterprise customers.",
+        "Iterated on UI layouts and interaction patterns based on stakeholder feedback, enhancing customer experience and supporting engagement across 100+ active users."
+      ],
+      "techStack": ["React", "UI/UX Design", "Information Architecture"],
+      "status": "Active"
+    },
+    {
+      "title": "Machine Learning Engineer",
+      "company": "Haridra Solutions, Inc.",
+      "location": "Mount Airy, MD",
+      "period": "Jun. 2023 – Aug. 2024",
+      "description": "Developed and optimized machine learning models for educational technology applications.",
+      "achievements": [
+        "Engineered machine learning models in Python to support language learning applications, contributing to a 30% increase in student applications to top-tier colleges.",
+        "Optimized model inference performance by over 20%, reducing processing latency from 45s to 35s per query and improving system efficiency."
+      ],
+      "techStack": ["Python", "Machine Learning", "Performance Optimization"],
+      "status": "Completed"
+    }
+  ],
+  "projects": [
+    {
+      "title": "SenseGuard, Inc.",
+      "description": "Full-stack security monitoring platform for distributed IoT systems with real-time telemetry processing.",
+      "longDescription": "Designed and deployed a comprehensive security monitoring platform processing 1,000+ telemetry events per day across distributed IoT systems. Containerized backend services using Docker and deployed to Google Cloud Platform, supporting CI/CD workflows and maintaining 99.9% service availability. Configured and provisioned 200+ IoT sensors and gateways across 50+ sites, validating end-to-end data pipelines and standardizing device onboarding procedures.",
+      "techStack": ["React", "Node.js", "PostgreSQL", "Docker", "Google Cloud Platform"],
+      "period": "Sep. 2025 – Present",
+      "githubUrl": "https://github.com/vvasa33",
+      "company": "SenseGuard, Inc.",
+      "companyLogo": "https://placehold.co/400x400/000000/FFFFFF/png?text=SG",
+      "status": "Active"
+    },
+    {
+      "title": "Autonomous Robotics Optimization",
+      "description": "Performance optimization for autonomous navigation systems using C and ARM Assembly with custom networking protocols.",
+      "longDescription": "Optimized autonomous navigation algorithms using C and ARM-specific optimizations, achieving 25%+ performance improvement in real-time systems. Implemented a custom network communication protocol using the FTC SDK, improving data transfer efficiency by 75%. Focused on low-level systems programming and embedded development for competitive robotics applications.",
+      "techStack": ["C", "ARM Assembly", "FTC SDK", "Embedded Systems"],
+      "period": "Sep. 2021 – Aug. 2024",
+      "githubUrl": "https://github.com/vvasa33",
+      "company": "Personal Project",
+      "companyLogo": "https://placehold.co/400x400/000000/FFFFFF/png?text=AR",
+      "status": "Completed"
+    }
+  ],
+  "education": [
+    {
+      "id": "EDU-001",
+      "institution": "University of Maryland – College Park",
+      "title": "B.S. Computer Science (Cybersecurity) & Applied Mathematics",
+      "subtitle": [
+        "Honors College",
+        "Banneker/Key Full Merit Scholar"
+      ],
+      "badgeYear": "2027",
+      "timeline": "Expected May 2027",
+      "type": "academic",
+      "description": "Double major in Computer Science with Cybersecurity specialization and Applied Mathematics. Full merit scholarship recipient.",
+      "courses": ["Data Structures", "Computer Networks", "Operating Systems", "Cybersecurity", "Probability & Statistics"]
+    },
+    {
+      "id": "CRT-001",
+      "institution": "CompTIA",
+      "title": "Network+ Certification",
+      "subtitle": "Network Administration & Security Fundamentals",
+      "badgeYear": "Certified",
+      "type": "certification",
+      "description": "Network Administration, Security Fundamentals, Infrastructure, IoT Systems",
+      "courses": ["Network Administration", "TCP/IP", "DNS", "IoT Systems", "Device Provisioning"]
+    }
+  ],
+  "skills": [
+    {
+      "category": "Programming & Development",
+      "color": "bg-cmyk-cyan",
+      "items": [
+        {
+          "name": "Python",
+          "description": "Developing machine learning models, data pipelines, and backend systems with a focus on performance optimization and statistical analysis.",
+          "context": "Engineered ML models for language learning applications and optimized inference performance by over 20%."
+        },
+        {
+          "name": "JavaScript",
+          "description": "Building modern web applications with React, Node.js, and full-stack JavaScript frameworks for responsive user experiences.",
+          "context": "Developed full-stack applications with React frontends and Node.js backends for multiple production systems."
+        },
+        {
+          "name": "C",
+          "description": "Low-level systems programming and embedded development with ARM-specific optimizations for real-time performance.",
+          "context": "Optimized autonomous navigation algorithms achieving 25%+ performance improvement in robotics systems."
+        },
+        {
+          "name": "SQL",
+          "description": "Database design, query optimization, and data management for scalable applications with complex relational structures.",
+          "context": "Designed offline-first SQLite pipelines with cloud synchronization for 1,000+ user accounts."
+        },
+        {
+          "name": "React",
+          "description": "Building component-based user interfaces with modern React patterns, hooks, and state management solutions.",
+          "context": "Designed information architecture across 15+ pages and implemented dynamic UI layouts for enterprise customers."
+        },
+        {
+          "name": "Node.js",
+          "description": "Developing scalable backend services, RESTful APIs, and real-time applications with event-driven architecture.",
+          "context": "Built security monitoring platform processing 1,000+ telemetry events/day across distributed IoT systems."
+        }
+      ]
+    },
+    {
+      "category": "Systems & Networking",
+      "color": "bg-cmyk-magenta",
+      "items": [
+        {
+          "name": "Network Administration",
+          "description": "Managing and configuring network infrastructure, protocols, and services for reliable connectivity and security.",
+          "context": "CompTIA Network+ certified with expertise in enterprise network design and administration."
+        },
+        {
+          "name": "TCP/IP",
+          "description": "Deep understanding of internet protocols, routing, and network communication for distributed systems.",
+          "context": "Implemented custom network communication protocols improving data transfer efficiency by 75%."
+        },
+        {
+          "name": "DNS",
+          "description": "Configuring and managing domain name systems for reliable service discovery and network resolution.",
+          "context": "Applied in network infrastructure projects and IoT device provisioning workflows."
+        },
+        {
+          "name": "IoT Systems",
+          "description": "Designing and deploying Internet of Things solutions with focus on device management and data collection.",
+          "context": "Configured and provisioned 200+ IoT sensors and gateways across 50+ sites with standardized onboarding."
+        },
+        {
+          "name": "Device Provisioning",
+          "description": "Automating device setup, configuration, and deployment processes for scalable IoT infrastructure.",
+          "context": "Validated end-to-end data pipelines and standardized device onboarding procedures for distributed systems."
+        }
+      ]
+    },
+    {
+      "category": "Cloud & DevOps",
+      "color": "bg-highlighter-green",
+      "items": [
+        {
+          "name": "Docker",
+          "description": "Containerizing applications for consistent development and production environments with efficient deployment workflows.",
+          "context": "Containerized backend services and deployed to Google Cloud Platform supporting CI/CD workflows."
+        },
+        {
+          "name": "CI/CD",
+          "description": "Implementing continuous integration and deployment pipelines for automated testing and reliable releases.",
+          "context": "Maintained 99.9% service availability through automated CI/CD workflows and deployment strategies."
+        },
+        {
+          "name": "Google Cloud Platform",
+          "description": "Architecting and deploying cloud-native applications using GCP services for scalability and reliability.",
+          "context": "Deployed full-stack security monitoring platform to GCP with containerized services and cloud infrastructure."
+        },
+        {
+          "name": "AWS",
+          "description": "Building serverless and cloud solutions using Amazon Web Services for high-availability distributed systems.",
+          "context": "Experience with AWS services for cloud infrastructure and scalable application deployment."
+        }
+      ]
+    },
+    {
+      "category": "Security",
+      "color": "bg-cmyk-yellow",
+      "items": [
+        {
+          "name": "Cybersecurity Fundamentals",
+          "description": "Core security principles including threat modeling, vulnerability assessment, and secure system design.",
+          "context": "Computer Science degree with Cybersecurity specialization and CompTIA Network+ certification."
+        },
+        {
+          "name": "Authentication",
+          "description": "Implementing secure user authentication systems with modern protocols and best practices.",
+          "context": "Engineered authentication and role-based access control for secure mobile application with 2,000+ users."
+        },
+        {
+          "name": "Role-Based Access Control",
+          "description": "Designing and implementing RBAC systems for granular permission management and security enforcement.",
+          "context": "Implemented RBAC in Flutter mobile application with Firebase backend for secure user management."
+        },
+        {
+          "name": "Secure APIs",
+          "description": "Building secure API endpoints with encrypted communication, proper validation, and access controls.",
+          "context": "Developed encrypted client-server communication for secure full-stack applications with 2,000+ users."
+        }
+      ]
+    },
+    {
+      "category": "Data & Analytics",
+      "color": "bg-highlighter-pink",
+      "items": [
+        {
+          "name": "Machine Learning",
+          "description": "Developing and optimizing ML models for real-world applications with focus on performance and accuracy.",
+          "context": "Engineered ML models contributing to 30% increase in student applications and optimized inference by 20%."
+        },
+        {
+          "name": "Statistical Analysis",
+          "description": "Applying statistical methods and probability theory to data-driven decision making and model validation.",
+          "context": "Applied Mathematics coursework including Probability & Statistics for analytical problem-solving."
+        },
+        {
+          "name": "Data Pipelines",
+          "description": "Designing and implementing data processing workflows with focus on reliability, integrity, and fault tolerance.",
+          "context": "Developed offline-first SQLite pipeline with asynchronous cloud sync ensuring data integrity for 1,000+ accounts."
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "tagline": "Delivering high-quality code, secure architectures, and the occasional hot take on tabs vs. spaces since 2024.",
+    "systemStatus": {
+      "coffee": "High",
+      "bugs": "Low",
+      "uptime": "99.9%"
+    },
+    "sections": [
+      { "name": "Featured", "href": "#" },
+      { "name": "Editorials", "href": "#" },
+      { "name": "Classifieds", "href": "#" }
+    ]
+  }
+}
