@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
-import { itemVariants } from '../constants/animations';
+import { personaVariants } from '../constants/animations';
 import { Camera, ExternalLink, TrendingDown, Battery, Wifi } from 'lucide-react';
+import { resolveImagePath } from '../utils/imagePath';
 
 const iconMap = {
   TrendingDown,
@@ -17,7 +18,8 @@ export default function FeaturedProject({
   website,
   role,
   roleLabel,
-  stats = []
+  stats = [],
+  featuredImage
 }) {
   const tags = Array.isArray(techStack) ? techStack : techStack.split('//').map(t => t.trim());
   const secondParagraph = Array.isArray(description) && description[1] ? description[1] : '';
@@ -34,39 +36,58 @@ export default function FeaturedProject({
       '<span class="bg-highlighter-yellow text-black px-1 font-black">$1</span>'
     );
 
+  const logoSrc = resolveImagePath(companyLogo);
+  const heroImage = resolveImagePath(featuredImage);
+
   return (
     <motion.div 
-      variants={itemVariants} 
-      className="border-y-2 border-black py-12 md:py-16 my-8 md:my-16"
+      variants={personaVariants.item} 
+      className="border-y-2 border-black py-12 md:py-16 my-8 md:my-16 group"
     >
       <div className="flex flex-col md:flex-row justify-between items-start gap-8 mb-8 md:mb-12">
         <div>
           <div className="flex items-center gap-3 mb-4">
-            <span className="bg-black text-white px-3 py-1 text-xs font-bold uppercase tracking-widest">
+            <span className="bg-black text-white px-3 py-1 text-xs font-bold uppercase tracking-widest group-hover:bg-cmyk-magenta transition-colors duration-300">
               {roleLabel || "Featured"}
             </span>
             <span className="text-xs font-['IBM_Plex_Mono'] uppercase tracking-widest text-gray-500">
               2025
             </span>
           </div>
-          <h3 className="font-['Manrope'] text-4xl md:text-6xl uppercase tracking-tight mb-2">
+          <h3 className="font-['Manrope'] text-4xl md:text-6xl uppercase tracking-tight mb-2 transition-transform duration-300 ease-snappy">
             {title}
           </h3>
           <p className="font-['IBM_Plex_Mono'] text-lg text-cmyk-magenta font-bold uppercase">
             {role}
           </p>
+          {logoSrc && website && (
+            <a 
+              href={website}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 w-20 h-20 border-2 border-black p-2 bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:-translate-x-1 transition-all duration-200 block"
+            >
+              <img 
+                src={logoSrc} 
+                alt={`${company} logo`} 
+                className="w-full h-full object-contain img-print-look"
+              />
+            </a>
+          )}
         </div>
         
         {website && (
-          <a 
+          <motion.a 
             href={website}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center gap-2 border-2 border-black px-6 py-3 uppercase text-xs tracking-widest font-['IBM_Plex_Mono'] font-bold hover:bg-black hover:text-white transition-colors"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="group/btn flex items-center gap-2 border-2 border-black px-6 py-3 uppercase text-xs tracking-widest font-['IBM_Plex_Mono'] font-bold hover:bg-black hover:text-white transition-colors"
           >
             <span>Visit Project</span>
-            <ExternalLink size={14} className="group-hover:translate-x-1 transition-transform" />
-          </a>
+            <ExternalLink size={14} className="group-hover/btn:translate-x-1 transition-transform" />
+          </motion.a>
         )}
       </div>
 
@@ -120,7 +141,7 @@ export default function FeaturedProject({
               {tags.map((tech, i) => (
                 <span 
                   key={i} 
-                  className="font-['IBM_Plex_Mono'] text-xs uppercase tracking-wider font-medium border border-gray-200 px-3 py-1 bg-gray-50"
+                  className="font-['IBM_Plex_Mono'] text-xs uppercase tracking-wider font-medium border border-gray-200 px-3 py-1 bg-gray-50 hover:bg-black hover:text-white transition-colors duration-200"
                 >
                   {tech}
                 </span>
@@ -130,6 +151,17 @@ export default function FeaturedProject({
         </div>
 
         <div className="space-y-8 lg:border-l-2 lg:border-gray-100 lg:pl-12">
+          {/* Featured image (optional) */}
+          {heroImage && (
+            <div className="border-2 border-black bg-white shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] overflow-hidden hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] transition-all duration-300">
+              <img 
+                src={heroImage} 
+                alt={`${title} visual`} 
+                className="w-full h-auto object-cover img-print-look hover:scale-105 transition-transform duration-500 ease-snappy"
+              />
+            </div>
+          )}
+
           {/* Key Metrics */}
           {stats.length > 0 && (
             <div>
@@ -140,7 +172,7 @@ export default function FeaturedProject({
                  {stats.map((stat, i) => {
                    const Icon = iconMap[stat.icon];
                    return (
-                     <div key={i} className="flex items-baseline justify-between border-b border-gray-200 pb-2">
+                     <div key={i} className="flex items-baseline justify-between border-b border-gray-200 pb-2 hover:border-black transition-colors">
                        <span className="font-['IBM_Plex_Mono'] text-sm text-gray-600 uppercase tracking-wider">
                          {stat.label}
                        </span>

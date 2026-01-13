@@ -1,10 +1,14 @@
 import { motion } from 'framer-motion';
-import { itemVariants } from '../constants/animations';
+import { personaVariants } from '../constants/animations';
 import { getIcon } from '../utils/iconMap';
 import portfolioData from '../data/portfolio.json';
 
 export default function KeyMetrics({ side = 'left' }) {
-  const metricsData = side === 'left' ? portfolioData.hero.metrics.left : portfolioData.hero.metrics.right;
+  const metricsData = side === 'left' ? portfolioData.hero.metrics?.left || [] : portfolioData.hero.metrics?.right || [];
+  
+  if (metricsData.length === 0) {
+    return null; // Don't render anything if there are no metrics
+  }
   
   const metrics = metricsData.map(metric => ({
     ...metric,
@@ -13,13 +17,14 @@ export default function KeyMetrics({ side = 'left' }) {
 
   return (
     <motion.div 
-      variants={itemVariants}
+      variants={personaVariants.item}
       className="flex flex-col gap-4 md:gap-6"
     >
       {metrics.map((metric, index) => (
-        <div 
+        <motion.div 
           key={index}
-          className="flex flex-col items-center text-center p-4 border border-black bg-white hover:bg-gray-50 transition-colors"
+          whileHover={{ scale: 1.05 }}
+          className="flex flex-col items-center text-center p-4 border border-black bg-white hover:bg-gray-50 transition-colors shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
         >
           <metric.icon className="w-5 h-5 md:w-6 md:h-6 mb-2 text-black" strokeWidth={1.5} />
           <div className="font-['Manrope'] text-lg md:text-xl font-bold text-black mb-1">
@@ -28,7 +33,7 @@ export default function KeyMetrics({ side = 'left' }) {
           <div className="font-['IBM_Plex_Mono'] text-[10px] uppercase tracking-widest text-gray-500 leading-tight">
             {metric.label}
           </div>
-        </div>
+        </motion.div>
       ))}
     </motion.div>
   );

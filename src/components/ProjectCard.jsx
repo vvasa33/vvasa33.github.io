@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
-import { fastItemVariants } from '../constants/animations';
+import { personaVariants } from '../constants/animations';
 import { Github, ExternalLink, ArrowUpRight } from 'lucide-react';
+import { resolveImagePath } from '../utils/imagePath';
 
 export default function ProjectCard({ 
   title, 
@@ -13,6 +14,8 @@ export default function ProjectCard({
   status = "Completed",
   isSelected = false
 }) {
+  const logoSrc = resolveImagePath(companyLogo);
+
   const getStatusColor = (status) => {
     const s = status.toLowerCase();
     if (s.includes('completed')) return 'text-highlighter-green';
@@ -22,29 +25,38 @@ export default function ProjectCard({
     return 'text-gray-400';
   };
 
+  const cardVariants = {
+    hidden: personaVariants.item.hidden,
+    visible: personaVariants.item.visible,
+    hover: personaVariants.hover,
+    tap: personaVariants.tap
+  };
+
   return (
     <motion.div 
-      variants={fastItemVariants} 
-      className="group flex flex-col h-full border-2 border-black bg-white p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 transition-all duration-200 relative overflow-hidden"
+      variants={cardVariants}
+      whileHover="hover"
+      whileTap="tap"
+      className="group flex flex-col h-full border-2 border-black bg-white p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 transition-shadow duration-200 relative overflow-hidden"
     >
       {/* Header */}
       <div className="flex justify-between items-start mb-4">
         <div className="flex gap-4 items-start">
-          {companyLogo && (
-            <div className="w-12 h-12 flex-shrink-0 border-2 border-black bg-white p-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+          {logoSrc && (
+            <div className="w-12 h-12 flex-shrink-0 border-2 border-black bg-white p-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-transform duration-300 ease-snappy">
               <img 
-                src={companyLogo} 
+                src={logoSrc} 
                 alt={`${company} logo`} 
                 className="w-full h-full object-contain img-print-look"
               />
             </div>
           )}
           <div>
-            <h3 className="font-['Manrope'] text-2xl leading-none mb-1">
+            <h3 className="font-['Manrope'] text-2xl leading-none mb-1 group-hover:text-cmyk-magenta transition-colors duration-300">
               {title}
             </h3>
             {company && (
-              <p className="font-['IBM_Plex_Mono'] text-[10px] font-bold text-cmyk-magenta uppercase tracking-widest">
+              <p className="font-['IBM_Plex_Mono'] text-[10px] font-bold text-cmyk-magenta uppercase tracking-widest group-hover:text-black transition-colors duration-300">
                 {company}
               </p>
             )}
@@ -56,7 +68,7 @@ export default function ProjectCard({
               href={githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-1 transition-colors text-black hover:text-black"
+              className="p-1 transition-colors text-black hover:text-cmyk-cyan hover:scale-110 active:scale-95"
             >
               <Github size={18} />
             </a>
@@ -66,7 +78,7 @@ export default function ProjectCard({
               href={liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-1 transition-colors text-black hover:text-black"
+              className="p-1 transition-colors text-black hover:text-cmyk-magenta hover:scale-110 active:scale-95"
             >
               <ExternalLink size={18} />
             </a>
@@ -75,7 +87,7 @@ export default function ProjectCard({
       </div>
 
       {/* Description */}
-      <p className="font-['IBM_Plex_Mono'] text-sm text-gray-600 mb-6 flex-grow leading-relaxed">
+      <p className="font-['IBM_Plex_Mono'] text-sm text-gray-600 mb-6 flex-grow leading-relaxed group-hover:text-black transition-colors duration-300">
         {description}
       </p>
 
@@ -85,7 +97,7 @@ export default function ProjectCard({
           {techStack.map((tech, i) => (
             <span 
               key={i} 
-              className="font-['IBM_Plex_Mono'] text-[10px] font-bold uppercase tracking-wider bg-gray-100 px-2 py-1 text-gray-600"
+              className="font-['IBM_Plex_Mono'] text-[10px] font-bold uppercase tracking-wider bg-gray-100 px-2 py-1 text-gray-600 group-hover:bg-black group-hover:text-white transition-colors duration-300"
             >
               {tech}
             </span>
@@ -93,10 +105,10 @@ export default function ProjectCard({
         </div>
         
         <div className="flex justify-between items-center pt-2 border-t-2 border-black">
-            <span className={`font-['IBM_Plex_Mono'] text-[10px] uppercase tracking-widest font-bold ${getStatusColor(status)}`}>
+            <span className={`font-['IBM_Plex_Mono'] text-[10px] uppercase tracking-widest font-bold ${getStatusColor(status)} transition-transform duration-300`}>
                 Status: {status}
             </span>
-            <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+            <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity group-hover:animate-wiggle text-cmyk-cyan" />
         </div>
       </div>
     </motion.div>

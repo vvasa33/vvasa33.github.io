@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { containerVariants } from '../constants/animations';
+import { personaVariants } from '../constants/animations';
 import SEO from './SEO';
 import Header from './Header';
 import Masthead from './Masthead';
@@ -37,7 +37,7 @@ export default function Hero() {
         <motion.div
           initial="hidden"
           animate="visible"
-          variants={containerVariants}
+          variants={personaVariants.container}
           className="mb-24 md:mb-32"
         >
           {/* Top Header Section */}
@@ -82,7 +82,7 @@ export default function Hero() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1, margin: "0px 0px 100px 0px" }}
-          variants={containerVariants}
+          variants={personaVariants.container}
           className="mb-16 md:mb-24"
         >
           <BlogSection />
@@ -93,7 +93,7 @@ export default function Hero() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1, margin: "0px 0px 100px 0px" }}
-          variants={containerVariants}
+          variants={personaVariants.container}
           className="mb-16 md:mb-24"
         >
           <LineDivider />
@@ -110,7 +110,7 @@ export default function Hero() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1, margin: "0px 0px 100px 0px" }}
-          variants={containerVariants}
+          variants={personaVariants.container}
           className="mb-16 md:mb-24"
         >
            <ProjectsSection />
@@ -121,7 +121,7 @@ export default function Hero() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1, margin: "0px 0px 100px 0px" }}
-          variants={containerVariants}
+          variants={personaVariants.container}
           className="mb-16 md:mb-24"
         >
           <DoubleBorderDivider />
@@ -135,7 +135,7 @@ export default function Hero() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1, margin: "0px 0px 100px 0px" }}
-          variants={containerVariants}
+          variants={personaVariants.container}
           className="mb-12"
         >
            <NewspaperBlurb 

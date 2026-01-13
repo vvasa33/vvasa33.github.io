@@ -9,7 +9,7 @@ import { useLayoutEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { LineDivider } from '../components/SectionDivider';
-import { containerVariants } from '../constants/animations';
+import { personaVariants } from '../constants/animations';
 
 export default function BlogPost() {
   const { slug } = useParams();
@@ -31,13 +31,13 @@ export default function BlogPost() {
     }
 
     return (
-      <div className="my-8 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+      <div className="my-8 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-300">
         <div className="flex items-center justify-between px-4 py-2 bg-black text-white font-['IBM_Plex_Mono'] text-xs uppercase tracking-widest border-b border-black">
           <span>{languageMatch ? languageMatch[1] : 'Code'}</span>
           <div className="flex gap-2">
             <span className="w-2 h-2 rounded-full bg-red-500"/>
-            <span className="w-2 h-2 rounded-full bg-yellow-500"/>
-            <span className="w-2 h-2 rounded-full bg-green-500"/>
+            <span className="w-2 h-2 rounded-full bg-yellow-500 delay-75"/>
+            <span className="w-2 h-2 rounded-full bg-green-500 delay-150"/>
           </div>
         </div>
         <pre
@@ -51,7 +51,7 @@ export default function BlogPost() {
   };
 
   const ImageRenderer = ({ src, alt }) => (
-    <figure className="my-10 border-2 border-black p-2 bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+    <figure className="my-10 border-2 border-black p-2 bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-transform duration-300">
       <div className="overflow-hidden relative grayscale hover:grayscale-0 transition-all duration-500">
         <img
           src={src}
@@ -149,7 +149,7 @@ export default function BlogPost() {
           <motion.div
             initial="hidden"
             animate="visible"
-            variants={containerVariants}
+            variants={personaVariants.container}
           >
             {/* Header Structure */}
             <Header />
@@ -159,9 +159,9 @@ export default function BlogPost() {
             <div className="mb-12">
               <Link 
                 to="/blogs" 
-                className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest border border-black px-4 py-2 bg-white hover:bg-black hover:text-white transition-all shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none"
+                className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest border border-black px-4 py-2 bg-white hover:bg-black hover:text-white transition-all shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none group"
               >
-                <ArrowLeft className="w-4 h-4" />
+                <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
                 Back to Reports
               </Link>
             </div>
@@ -189,9 +189,14 @@ export default function BlogPost() {
                   </div>
                 </div>
 
-                <h1 className="font-['Manrope'] text-4xl md:text-6xl lg:text-7xl font-black uppercase leading-[0.9] tracking-tighter mb-8 text-black">
+                <motion.h1 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2, type: "spring", stiffness: 400, damping: 20 }}
+                  className="font-['Manrope'] text-4xl md:text-6xl lg:text-7xl font-black uppercase leading-[0.9] tracking-tighter mb-8 text-black"
+                >
                   {post.title}
-                </h1>
+                </motion.h1>
 
                 {post.excerpt && (
                   <p className="text-xl md:text-2xl leading-relaxed font-medium text-gray-700 border-l-4 border-black pl-6 py-2">
@@ -221,9 +226,9 @@ export default function BlogPost() {
                      {/* Share buttons could go here */}
                      <button 
                       onClick={() => navigator.clipboard.writeText(window.location.href)}
-                      className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest hover:bg-cmyk-yellow px-2 py-1 transition-colors cursor-pointer"
+                      className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest hover:bg-cmyk-yellow px-2 py-1 transition-colors cursor-pointer group"
                      >
-                       <Share2 className="w-4 h-4" />
+                       <Share2 className="w-4 h-4 transition-transform" />
                        Share Link
                      </button>
                   </div>
@@ -234,9 +239,9 @@ export default function BlogPost() {
               <div className="mt-16 text-center">
                  <Link 
                   to="/blogs" 
-                  className="inline-flex items-center gap-2 font-['Manrope'] text-xl font-bold border-b-2 border-black hover:bg-black hover:text-white transition-colors"
+                  className="inline-flex items-center gap-2 font-['Manrope'] text-xl font-bold border-b-2 border-black hover:bg-black hover:text-white transition-colors group"
                 >
-                  <ArrowLeft className="w-5 h-5" />
+                  <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
                   Return to all Field Reports
                 </Link>
               </div>

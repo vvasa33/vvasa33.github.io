@@ -11,7 +11,7 @@ import SectionHeader from '../components/SectionHeader';
 import ArticleCard from '../components/ArticleCard';
 import NewsTicker from '../components/NewsTicker';
 import { LineDivider, LineDividerBottom } from '../components/SectionDivider';
-import { containerVariants, itemVariants } from '../constants/animations';
+import { personaVariants } from '../constants/animations';
 
 export default function BlogsPage() {
   const posts = getAllPosts();
@@ -34,7 +34,7 @@ export default function BlogsPage() {
           <motion.div
             initial="hidden"
             animate="visible"
-            variants={containerVariants}
+            variants={personaVariants.container}
             className="mb-12"
           >
             {/* Top Header Section */}
@@ -53,14 +53,14 @@ export default function BlogsPage() {
             <div className="flex justify-between items-center mb-12 border-b-2 border-black pb-4">
                <Link 
                 to="/" 
-                className="font-['IBM_Plex_Mono'] text-xs font-bold border-2 border-black px-4 py-2 bg-white hover:bg-black hover:text-white transition-colors inline-flex items-center gap-2 uppercase tracking-widest shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                className="font-['IBM_Plex_Mono'] text-xs font-bold border-2 border-black px-4 py-2 bg-white hover:bg-black hover:text-white transition-colors inline-flex items-center gap-2 uppercase tracking-widest shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] group"
               >
-                <ArrowLeft className="w-4 h-4" />
+                <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
                 Back to Front Page
               </Link>
               
               <div className="hidden md:flex items-center gap-2">
-                <span className="w-3 h-3 bg-cmyk-cyan rounded-full animate-pulse"></span>
+                <span className="w-3 h-3 bg-cmyk-cyan rounded-full"></span>
                 <span className="font-['IBM_Plex_Mono'] text-xs uppercase tracking-widest">Live Updates</span>
               </div>
             </div>
@@ -94,7 +94,7 @@ export default function BlogsPage() {
               {posts.map((post, index) => (
                 <motion.div
                   key={post.slug}
-                  variants={itemVariants}
+                  variants={personaVariants.item}
                   className="h-full"
                 >
                   <ArticleCard 

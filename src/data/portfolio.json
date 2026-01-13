@@ -8,9 +8,7 @@
     "name": "Viswanath Vasa",
     "role": "Security Engineer && Developer",
     "motto": "Building secure systems, one line of code at a time.",
-    "phone": "240-422-9783",
     "email": "vvasa@terpmail.umd.edu",
-    "website": "vvasa33.github.io",
     "linkedin": "https://linkedin.com/in/visu-vasa",
     "github": "https://github.com/vvasa33"
   },
@@ -42,10 +40,6 @@
         "trend": "up"
       }
     ],
-    "metrics": {
-      "left": [],
-      "right": []
-    },
     "blurbs": {
       "professionalOverview": {
         "title": "Professional Overview",
@@ -110,8 +104,8 @@
         "author": "Viswanath Vasa",
         "tag": "CONTACT",
         "paragraphs": [
-          "I'm open to discussing opportunities in security engineering, full-stack development, and technical leadership roles. Whether you're building secure infrastructure, scaling IoT systems, or need expertise in cloud architecture, I'd be interested in exploring how I can contribute.",
-          "Available for full-time positions, consulting engagements, and technical advisory roles. Reach out via email at <a href=\"mailto:vvasa@terpmail.umd.edu\" class=\"font-bold underline text-cmyk-cyan hover:text-cmyk-magenta transition-colors\">vvasa@terpmail.umd.edu</a> or connect with me on <a href=\"https://linkedin.com/in/visu-vasa\" class=\"font-bold underline text-cmyk-cyan hover:text-cmyk-magenta transition-colors\" target=\"_blank\" rel=\"noopener noreferrer\">LinkedIn</a>."
+          "I'm a student, so I'm available at any time! I'm available for full-time positions, freelancing, and whatever else you'd like to throw at me.",
+          "Reach out via email at <a href=\"mailto:vvasa@terpmail.umd.edu\" class=\"font-bold underline text-cmyk-cyan hover:text-cmyk-magenta transition-colors\">vvasa@terpmail.umd.edu</a> or connect with me on <a href=\"https://linkedin.com/in/visu-vasa\" class=\"font-bold underline text-cmyk-cyan hover:text-cmyk-magenta transition-colors\" target=\"_blank\" rel=\"noopener noreferrer\">LinkedIn</a>."
         ],
         "sidebar": [
           {
@@ -141,8 +135,6 @@
       "Designed and deployed a full-stack security monitoring platform processing 1,000+ telemetry events per day across distributed IoT systems. The platform provides real-time monitoring and analytics for industrial safety and operational efficiency.",
       "Containerized backend services using Docker and deployed to Google Cloud Platform, supporting CI/CD workflows and maintaining 99.9% service availability. Configured and provisioned 200+ IoT sensors and gateways across 50+ sites, validating end-to-end data pipelines and standardizing device onboarding procedures."
     ],
-    "period": "Sep. 2025 - Present",
-    "status": "Active Project",
     "website": "https://senseguard.dev",
     "stats": [
       {
@@ -172,75 +164,8 @@
     ],
     "techStack": ["React", "Node.js", "PostgreSQL", "Docker", "Google Cloud Platform", "IoT"],
     "company": "SenseGuard, Inc.",
-    "companyLogo": "https://placehold.co/400x400/000000/FFFFFF/png?text=SG",
-    "featuredImage": "https://placehold.co/1200x800/e5e7eb/000000/png?text=SenseGuard+System+Architecture"
+    "companyLogo": "SenseGuard.png"
   },
-  "experience": [
-    {
-      "title": "Researcher & Lead Full-Stack Developer",
-      "company": "Empowering Secure Elections Laboratory",
-      "location": "College Park, MD",
-      "period": "May 2025 – Present",
-      "description": "Leading full-stack development for secure election training systems with focus on mobile security and data integrity.",
-      "achievements": [
-        "Engineered a secure full-stack Flutter mobile application with a Firebase backend, implementing authentication, role-based access control, and encrypted client-server communication for 2,000+ users.",
-        "Designed an offline-first SQLite data pipeline with asynchronous cloud synchronization, ensuring reliable data integrity, auditability, and fault tolerance for 1,000+ user accounts.",
-        "Developed a modular content delivery system supporting dynamic text, images, and video, enabling non-technical teams to deploy 50+ interactive training modules."
-      ],
-      "techStack": ["Flutter", "Firebase", "SQLite", "Authentication", "RBAC"],
-      "status": "Active"
-    },
-    {
-      "title": "Frontend Developer (Contract)",
-      "company": "Sunrise Scientific",
-      "location": "Towson, MD",
-      "period": "Dec. 2025 – Present",
-      "description": "Contracted frontend development focused on information architecture and user experience optimization.",
-      "achievements": [
-        "Designed and implemented information architecture and navigation flows across 15+ pages, improving usability and content discoverability for enterprise customers.",
-        "Iterated on UI layouts and interaction patterns based on stakeholder feedback, enhancing customer experience and supporting engagement across 100+ active users."
-      ],
-      "techStack": ["React", "UI/UX Design", "Information Architecture"],
-      "status": "Active"
-    },
-    {
-      "title": "Machine Learning Engineer",
-      "company": "Haridra Solutions, Inc.",
-      "location": "Mount Airy, MD",
-      "period": "Jun. 2023 – Aug. 2024",
-      "description": "Developed and optimized machine learning models for educational technology applications.",
-      "achievements": [
-        "Engineered machine learning models in Python to support language learning applications, contributing to a 30% increase in student applications to top-tier colleges.",
-        "Optimized model inference performance by over 20%, reducing processing latency from 45s to 35s per query and improving system efficiency."
-      ],
-      "techStack": ["Python", "Machine Learning", "Performance Optimization"],
-      "status": "Completed"
-    }
-  ],
-  "projects": [
-    {
-      "title": "SenseGuard, Inc.",
-      "description": "Full-stack security monitoring platform for distributed IoT systems with real-time telemetry processing.",
-      "longDescription": "Designed and deployed a comprehensive security monitoring platform processing 1,000+ telemetry events per day across distributed IoT systems. Containerized backend services using Docker and deployed to Google Cloud Platform, supporting CI/CD workflows and maintaining 99.9% service availability. Configured and provisioned 200+ IoT sensors and gateways across 50+ sites, validating end-to-end data pipelines and standardizing device onboarding procedures.",
-      "techStack": ["React", "Node.js", "PostgreSQL", "Docker", "Google Cloud Platform"],
-      "period": "Sep. 2025 – Present",
-      "githubUrl": "https://github.com/vvasa33",
-      "company": "SenseGuard, Inc.",
-      "companyLogo": "https://placehold.co/400x400/000000/FFFFFF/png?text=SG",
-      "status": "Active"
-    },
-    {
-      "title": "Autonomous Robotics Optimization",
-      "description": "Performance optimization for autonomous navigation systems using C and ARM Assembly with custom networking protocols.",
-      "longDescription": "Optimized autonomous navigation algorithms using C and ARM-specific optimizations, achieving 25%+ performance improvement in real-time systems. Implemented a custom network communication protocol using the FTC SDK, improving data transfer efficiency by 75%. Focused on low-level systems programming and embedded development for competitive robotics applications.",
-      "techStack": ["C", "ARM Assembly", "FTC SDK", "Embedded Systems"],
-      "period": "Sep. 2021 – Aug. 2024",
-      "githubUrl": "https://github.com/vvasa33",
-      "company": "Personal Project",
-      "companyLogo": "https://placehold.co/400x400/000000/FFFFFF/png?text=AR",
-      "status": "Completed"
-    }
-  ],
   "education": [
     {
       "id": "EDU-001",
@@ -254,7 +179,8 @@
       "timeline": "Expected May 2027",
       "type": "academic",
       "description": "Double major in Computer Science with Cybersecurity specialization and Applied Mathematics. Full merit scholarship recipient.",
-      "courses": ["Data Structures", "Computer Networks", "Operating Systems", "Cybersecurity", "Probability & Statistics"]
+      "courses": ["Data Structures", "Computer Networks", "Operating Systems", "Cybersecurity", "Probability & Statistics"],
+      "institutionLogo": "umd.png"
     },
     {
       "id": "CRT-001",
@@ -264,7 +190,8 @@
       "badgeYear": "Certified",
       "type": "certification",
       "description": "Network Administration, Security Fundamentals, Infrastructure, IoT Systems",
-      "courses": ["Network Administration", "TCP/IP", "DNS", "IoT Systems", "Device Provisioning"]
+      "courses": ["Network Administration", "TCP/IP", "DNS", "IoT Systems", "Device Provisioning"],
+      "institutionLogo": "comptia.png"
     }
   ],
   "skills": [
@@ -410,16 +337,6 @@
     }
   ],
   "footer": {
-    "tagline": "Delivering high-quality code, secure architectures, and the occasional hot take on tabs vs. spaces since 2024.",
-    "systemStatus": {
-      "coffee": "High",
-      "bugs": "Low",
-      "uptime": "99.9%"
-    },
-    "sections": [
-      { "name": "Featured", "href": "#" },
-      { "name": "Editorials", "href": "#" },
-      { "name": "Classifieds", "href": "#" }
-    ]
+    "tagline": "Delivering high-quality code, secure architectures, and the occasional hot take on tabs vs. spaces since 2024."
   }
 }

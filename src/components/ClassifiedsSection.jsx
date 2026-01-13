@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { fastItemVariants, containerVariants } from '../constants/animations';
+import { personaVariants } from '../constants/animations';
 import SectionHeader from './SectionHeader';
 import CredentialCard from './CredentialCard';
 import SkillMatrix from './SkillMatrix';
@@ -9,19 +9,19 @@ export default function ClassifiedsSection({
   certificates = portfolioData.education
 }) {
   return (
-    <motion.div variants={containerVariants}>
+    <motion.div variants={personaVariants.container}>
       <SectionHeader title="EDUCATION & SKILLS" color="bg-cmyk-yellow" />
 
       <div className="flex flex-col gap-12 md:gap-16">
         {/* Academic Record (ID Cards) - Full Width Row */}
         <div className="w-full">
-          <motion.h3 variants={fastItemVariants} className="font-['IBM_Plex_Mono'] font-bold text-xl uppercase border-b-2 border-black pb-2 mb-8 inline-block w-full">
+          <motion.h3 variants={personaVariants.item} className="font-['IBM_Plex_Mono'] font-bold text-xl uppercase border-b-2 border-black pb-2 mb-8 inline-block w-full">
             Academic Record
           </motion.h3>
           
           <motion.div 
             className="grid grid-cols-1 md:grid-cols-2 gap-6"
-            variants={containerVariants}
+            variants={personaVariants.container}
           >
             {certificates.map((cert, index) => (
               <CredentialCard
@@ -35,6 +35,7 @@ export default function ClassifiedsSection({
                 description={cert.description}
                 courses={cert.courses}
                 timeline={cert.timeline}
+                institutionLogo={cert.institutionLogo}
               />
             ))}
           </motion.div>
@@ -42,7 +43,7 @@ export default function ClassifiedsSection({
 
         {/* Skill Matrix - Full Width */}
         <div className="w-full">
-          <motion.h3 variants={fastItemVariants} className="font-['IBM_Plex_Mono'] font-bold text-xl uppercase border-b-2 border-black pb-2 mb-6">
+          <motion.h3 variants={personaVariants.item} className="font-['IBM_Plex_Mono'] font-bold text-xl uppercase border-b-2 border-black pb-2 mb-6">
             Technical Skills
           </motion.h3>
 
