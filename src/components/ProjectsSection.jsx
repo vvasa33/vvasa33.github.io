@@ -19,7 +19,8 @@ export default function ProjectsSection() {
   const [activeProject, setActiveProject] = useState(projects[0]);
   const bulletSpecs = (activeProject.achievements && activeProject.achievements.length
     ? activeProject.achievements
-    : (activeProject.description || '').split('. '))
+    : (Array.isArray(activeProject.description) ? activeProject.description : [activeProject.description || '']))
+    .flatMap(desc => desc.split('. '))
     .map((entry) => entry.trim().replace(/\.$/, ''))
     .filter(Boolean);
   const activeLogo = resolveImagePath(activeProject.companyLogo);
@@ -37,22 +38,23 @@ export default function ProjectsSection() {
       <SectionHeader title="EXPERIENCE" color="bg-cmyk-cyan" />
       
       <motion.div 
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12"
+        className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 mb-12"
         variants={personaVariants.container}
       >
         {projects.map((project, index) => (
-          <div 
+          <div
             key={index}
             onMouseEnter={() => setActiveProject(project)}
-            className="h-full"
+            onClick={() => setActiveProject(project)}
+            className="h-full cursor-pointer md:cursor-default"
           >
             <ProjectCard 
               title={project.title}
               company={project.company}
               companyLogo={project.companyLogo}
-              description={project.description}
+              description={Array.isArray(project.description) ? project.description[0] : project.description}
               techStack={project.techStack}
-              status={project.status || project.period}
+              status={project.status || 'Current'}
               isSelected={activeProject.title === project.title}
             />
           </div>
@@ -69,7 +71,7 @@ export default function ProjectsSection() {
           transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
           className="border-2 md:border-4 border-black p-1 bg-white shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] md:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] group hover:-translate-y-1 hover:translate-x-1 transition-transform"
         >
-          <div className="border border-black p-6 md:p-10 bg-paper relative overflow-hidden">
+          <div className="relative overflow-hidden border border-black bg-paper p-4 sm:p-6 md:p-10">
             <div className="flex flex-col md:flex-row justify-between items-start gap-8">
               <div className="flex-1">
                 <div className="flex items-center gap-2 mb-4">
@@ -85,10 +87,10 @@ export default function ProjectsSection() {
                       {activeProject.location}
                     </span>
                   )}
-                  {activeProject.period && (
+                  {activeProject.timeline && (
                     <span className="flex items-center gap-2">
                       <Calendar className="w-4 h-4" />
-                      {activeProject.period}
+                      {activeProject.timeline}
                     </span>
                   )}
                 </div>
@@ -130,7 +132,7 @@ export default function ProjectsSection() {
               <div className="flex flex-col gap-4 min-w-[200px]">
                 <div className="border-2 border-black p-4 bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
                   <p className="font-['IBM_Plex_Mono'] text-[10px] font-bold uppercase text-gray-400 mb-2">Status</p>
-                  <p className="font-['IBM_Plex_Mono'] text-sm font-black uppercase text-cmyk-cyan">{activeProject.status || activeProject.period || 'Active'}</p>
+                  <p className="font-['IBM_Plex_Mono'] text-sm font-black uppercase text-cmyk-cyan">{activeProject.status || 'Active'}</p>
                 </div>
                 
                 {activeProject.githubUrl && (

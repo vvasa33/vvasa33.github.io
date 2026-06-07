@@ -10,7 +10,13 @@ export default function ArticleCard({
   excerpt,
   color = "bg-black" 
 }) {
-  const textColor = color.includes('green') || color.includes('yellow') || color.includes('cyan') ? 'text-black' : 'text-white';
+  const textColor =
+    color.includes('green') ||
+    color.includes('yellow') ||
+    color.includes('cyan') ||
+    color.includes('pink')
+      ? 'text-black'
+      : 'text-white';
 
   const MotionLink = motion(Link);
 

@@ -34,7 +34,7 @@ export default function BlogSection() {
           <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="font-['IBM_Plex_Mono'] text-sm font-bold border-2 border-black px-8 py-4 bg-white hover:bg-black hover:text-white transition-colors inline-flex items-center gap-3 uppercase tracking-widest shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] group"
+            className="group inline-flex min-h-[44px] items-center justify-center gap-3 border-2 border-black bg-white px-8 py-4 font-['IBM_Plex_Mono'] text-sm font-bold uppercase tracking-widest shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-colors hover:bg-black hover:text-white"
           >
             View All Articles
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

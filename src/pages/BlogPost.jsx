@@ -144,7 +144,7 @@ export default function BlogPost() {
         canonical={`/blog/${post.slug}`}
       />
       
-      <div className="bg-paper w-full min-h-screen px-4 md:px-12 lg:px-24 py-8 md:py-20 text-black font-['IBM_Plex_Mono']">
+      <div className="bg-paper min-h-screen w-full pb-[max(2rem,env(safe-area-inset-bottom))] pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))] pt-[max(2rem,env(safe-area-inset-top))] text-black font-['IBM_Plex_Mono'] md:pb-[max(5rem,env(safe-area-inset-bottom))] md:pl-[max(3rem,env(safe-area-inset-left))] md:pr-[max(3rem,env(safe-area-inset-right))] md:pt-[max(5rem,env(safe-area-inset-top))] lg:pl-[max(6rem,env(safe-area-inset-left))] lg:pr-[max(6rem,env(safe-area-inset-right))]">
         <div className="max-w-[1440px] mx-auto">
           <motion.div
             initial="hidden"
@@ -159,7 +159,7 @@ export default function BlogPost() {
             <div className="mb-12">
               <Link 
                 to="/blogs" 
-                className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest border border-black px-4 py-2 bg-white hover:bg-black hover:text-white transition-all shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none group"
+                className="group inline-flex min-h-[44px] items-center gap-2 border border-black bg-white px-4 py-2 text-xs font-bold uppercase tracking-widest shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[1px] hover:translate-y-[1px] hover:bg-black hover:text-white hover:shadow-none"
               >
                 <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
                 Back to Reports
@@ -193,7 +193,7 @@ export default function BlogPost() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2, type: "spring", stiffness: 400, damping: 20 }}
-                  className="font-['Manrope'] text-4xl md:text-6xl lg:text-7xl font-black uppercase leading-[0.9] tracking-tighter mb-8 text-black"
+                  className="mb-8 break-words font-['Manrope'] text-3xl font-black uppercase leading-[0.9] tracking-tighter text-black sm:text-4xl md:text-6xl lg:text-7xl"
                 >
                   {post.title}
                 </motion.h1>
@@ -206,7 +206,7 @@ export default function BlogPost() {
               </header>
 
               {/* Main Content */}
-              <div className="bg-white border-2 border-black p-10 md:p-16 lg:p-20 shadow-[10px_10px_0px_0px_rgba(0,0,0,1)]">
+              <div className="border-2 border-black bg-white p-5 shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] sm:p-8 md:p-16 lg:p-20">
                 <div className="prose prose-2xl max-w-none leading-relaxed">
                   <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>
                     {post.content}

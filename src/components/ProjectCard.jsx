@@ -40,8 +40,8 @@ export default function ProjectCard({
       className="group flex flex-col h-full border-2 border-black bg-white p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 transition-shadow duration-200 relative overflow-hidden"
     >
       {/* Header */}
-      <div className="flex justify-between items-start mb-4">
-        <div className="flex gap-4 items-start">
+      <div className="flex justify-between items-start gap-2 mb-4">
+        <div className="flex gap-4 items-start min-w-0">
           {logoSrc && (
             <div className="w-12 h-12 flex-shrink-0 border-2 border-black bg-white p-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-transform duration-300 ease-snappy">
               <img 
@@ -51,8 +51,8 @@ export default function ProjectCard({
               />
             </div>
           )}
-          <div>
-            <h3 className="font-['Manrope'] text-2xl leading-none mb-1 group-hover:text-cmyk-magenta transition-colors duration-300">
+          <div className="min-w-0">
+            <h3 className="font-['Manrope'] text-xl md:text-2xl leading-tight mb-1 break-words hyphens-auto group-hover:text-cmyk-magenta transition-colors duration-300">
               {title}
             </h3>
             {company && (
@@ -68,7 +68,7 @@ export default function ProjectCard({
               href={githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-1 transition-colors text-black hover:text-cmyk-cyan hover:scale-110 active:scale-95"
+              className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center p-1 text-black transition-colors hover:scale-110 hover:text-cmyk-cyan active:scale-95"
             >
               <Github size={18} />
             </a>
@@ -78,7 +78,7 @@ export default function ProjectCard({
               href={liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-1 transition-colors text-black hover:text-cmyk-magenta hover:scale-110 active:scale-95"
+              className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center p-1 text-black transition-colors hover:scale-110 hover:text-cmyk-magenta active:scale-95"
             >
               <ExternalLink size={18} />
             </a>

@@ -9,7 +9,7 @@ export default function HeroTitle({ name = portfolioData.personal.name, subtitle
       {/* Mobile: Stack vertically */}
       <div className="block lg:hidden">
         <div className="text-center mb-6">
-          <motion.h2 variants={personaVariants.item} className="font-['IBM_Plex_Mono'] font-bold text-3xl md:text-5xl text-black mb-3 leading-tight">
+          <motion.h2 variants={personaVariants.item} className="mb-3 break-words font-['IBM_Plex_Mono'] text-3xl font-bold leading-tight text-black md:text-5xl">
             {name}
           </motion.h2>
           <motion.p variants={personaVariants.item} className="font-['IBM_Plex_Mono'] text-lg md:text-xl text-black mb-3 uppercase tracking-wider border-y border-black py-2">
@@ -44,9 +44,9 @@ export default function HeroTitle({ name = portfolioData.personal.name, subtitle
             variants={personaVariants.item}
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
-            className="font-['IBM_Plex_Mono'] font-black text-7xl xl:text-[90px] text-black leading-none tracking-tighter uppercase transition-all duration-300"
+            className="font-['IBM_Plex_Mono'] text-7xl font-black uppercase leading-none tracking-tighter text-black transition-all duration-300 xl:text-[90px]"
           >
-            <span className="block group-hover:-translate-y-2 transition-transform duration-300 ease-snappy group-hover:text-black group-hover:fill-black">
+            <span className="block break-words transition-transform duration-300 ease-snappy group-hover:-translate-y-2 group-hover:text-black group-hover:fill-black">
               {name}
             </span>
           </motion.h2>

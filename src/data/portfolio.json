@@ -13,7 +13,7 @@
     "github": "https://github.com/vvasa33"
   },
   "hero": {
-    "newspaperTitle": "The Programmer Times",
+    "newspaperTitle": "The Founder Times",
     "ticker": [
       {
         "symbol": "IOT",
@@ -192,6 +192,73 @@
       "description": "Network Administration, Security Fundamentals, Infrastructure, IoT Systems",
       "courses": ["Network Administration", "TCP/IP", "DNS", "IoT Systems", "Device Provisioning"],
       "institutionLogo": "comptia.png"
+    }
+  ],
+  "experience": [
+    {
+      "id": "EXP-001",
+      "title": "Empowering Secure Elections Laboratory",
+      "company": "University of Maryland",
+      "companyLogo": "umd.png",
+      "role": "Researcher & Lead Full-Stack Developer",
+      "timeline": "May 2025 – Present",
+      "status": "Current",
+      "description": [
+        "Engineered a secure full-stack Flutter mobile application with a Firebase backend, implementing authentication, role-based access control, and encrypted client-server communication for 2,000+ users.",
+        "Designed an offline-first SQLite data pipeline with asynchronous cloud synchronization, ensuring reliable data integrity, auditability, and fault tolerance for 1,000+ user accounts.",
+        "Developed a modular content delivery system supporting dynamic text, images, and video, enabling non-technical teams to deploy 50+ interactive training modules."
+      ],
+      "techStack": ["Flutter", "Firebase", "SQLite", "Dart", "TypeScript", "Encryption"],
+      "githubUrl": "https://github.com/vvasa33",
+      "liveUrl": null
+    },
+    {
+      "id": "EXP-002",
+      "title": "Sunrise Scientific",
+      "company": "Sunrise Scientific",
+      "companyLogo": "sunrise.png",
+      "role": "Frontend Developer (Contract)",
+      "timeline": "Dec. 2025 – Present",
+      "status": "Current",
+      "description": [
+        "Designed and implemented information architecture and navigation flows across 15+ pages, improving usability and content discoverability for enterprise customers.",
+        "Iterated on UI layouts and interaction patterns based on stakeholder feedback, enhancing customer experience and supporting engagement across 100+ active users."
+      ],
+      "techStack": ["React", "TypeScript", "UI/UX Design", "Information Architecture", "Figma"],
+      "githubUrl": "https://github.com/vvasa33",
+      "liveUrl": null
+    },
+    {
+      "id": "EXP-003",
+      "title": "Haridra Solutions, Inc.",
+      "company": "Haridra Solutions, Inc.",
+      "companyLogo": "haridra.png",
+      "role": "Machine Learning Engineer",
+      "timeline": "Jun. 2023 – Aug. 2024",
+      "status": "Completed",
+      "description": [
+        "Engineered machine learning models in Python to support language learning applications, contributing to a 30% increase in student applications to top-tier colleges.",
+        "Optimized model inference performance by over 20%, reducing processing latency from 45s to 35s per query and improving system efficiency."
+      ],
+      "techStack": ["Python", "TensorFlow", "PyTorch", "Scikit-learn", "Data Science", "ML Optimization"],
+      "githubUrl": "https://github.com/vvasa33",
+      "liveUrl": null
+    },
+    {
+      "id": "EXP-004",
+      "title": "Autonomous Robotics Optimization",
+      "company": "FTC Robotics",
+      "companyLogo": "robotics.png",
+      "role": "Robotics Software Developer",
+      "timeline": "Sep. 2021 – Aug. 2024",
+      "status": "Completed",
+      "description": [
+        "Optimized autonomous navigation algorithms using C and ARM-specific optimizations, achieving 25%+ performance improvement in real-time systems.",
+        "Implemented a custom network communication protocol using the FTC SDK, improving data transfer efficiency by 75%."
+      ],
+      "techStack": ["C", "ARM Assembly", "FTC SDK", "Robotics", "Network Protocols", "Real-time Systems"],
+      "githubUrl": "https://github.com/vvasa33",
+      "liveUrl": null
     }
   ],
   "skills": [

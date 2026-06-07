@@ -28,7 +28,7 @@ export default function BlogsPage() {
         canonical="/blogs"
       />
       
-      <div className="bg-paper w-full min-h-screen px-4 md:px-12 lg:px-24 py-8 md:py-20 text-black font-['IBM_Plex_Mono']">
+      <div className="bg-paper min-h-screen w-full pb-[max(2rem,env(safe-area-inset-bottom))] pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))] pt-[max(2rem,env(safe-area-inset-top))] text-black font-['IBM_Plex_Mono'] md:pb-[max(5rem,env(safe-area-inset-bottom))] md:pl-[max(3rem,env(safe-area-inset-left))] md:pr-[max(3rem,env(safe-area-inset-right))] md:pt-[max(5rem,env(safe-area-inset-top))] lg:pl-[max(6rem,env(safe-area-inset-left))] lg:pr-[max(6rem,env(safe-area-inset-right))]">
         <div className="max-w-[1440px] mx-auto relative">
           
           <motion.div
@@ -50,10 +50,10 @@ export default function BlogsPage() {
             <LineDividerBottom />
 
             {/* Navigation / Breadcrumb */}
-            <div className="flex justify-between items-center mb-12 border-b-2 border-black pb-4">
+            <div className="mb-12 flex flex-col gap-4 border-b-2 border-black pb-4 sm:flex-row sm:items-center sm:justify-between">
                <Link 
                 to="/" 
-                className="font-['IBM_Plex_Mono'] text-xs font-bold border-2 border-black px-4 py-2 bg-white hover:bg-black hover:text-white transition-colors inline-flex items-center gap-2 uppercase tracking-widest shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] group"
+                className="font-['IBM_Plex_Mono'] inline-flex min-h-[44px] items-center justify-center gap-2 border-2 border-black bg-white px-4 py-2 text-xs font-bold uppercase tracking-widest shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-colors hover:translate-x-[2px] hover:translate-y-[2px] hover:bg-black hover:text-white hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] group"
               >
                 <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
                 Back to Front Page
@@ -73,7 +73,7 @@ export default function BlogsPage() {
                   Technical Bureau
                 </span>
               </div>
-              <h1 className="font-['Manrope'] text-5xl md:text-7xl font-bold uppercase tracking-tight mb-6">
+              <h1 className="mb-6 break-words font-['Manrope'] text-3xl font-bold uppercase tracking-tight sm:text-5xl md:text-7xl">
                 Field Reports
               </h1>
               <p className="font-['IBM_Plex_Mono'] text-lg text-gray-800 max-w-3xl border-l-4 border-cmyk-yellow pl-6 py-2">

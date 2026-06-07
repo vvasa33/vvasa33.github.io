@@ -12,6 +12,7 @@ import BlogSection from './BlogSection';
 import ClassifiedsSection from './ClassifiedsSection';
 import NewspaperBlurb from './NewspaperBlurb';
 import Footer from './Footer';
+import HeroCanvas from './HeroCanvas';
 import { LineDivider, LineDividerBottom, DoubleBorderDivider } from './SectionDivider';
 import { getIcon } from '../utils/iconMap';
 import portfolioData from '../data/portfolio.json';
@@ -31,15 +32,16 @@ export default function Hero() {
         description={meta.description}
         canonical={meta.canonical}
       />
-      <div className="bg-paper w-full min-h-screen px-4 md:px-12 lg:px-24 py-8 md:py-20 text-black font-['IBM_Plex_Mono']">
-      <div className="max-w-[1440px] mx-auto relative">
-        {/* Above the Fold Content - Animates on Load */}
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={personaVariants.container}
-          className="mb-24 md:mb-32"
-        >
+      <HeroCanvas>
+        <div className="bg-paper min-h-screen w-full pb-[max(2rem,env(safe-area-inset-bottom))] pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))] pt-[max(2rem,env(safe-area-inset-top))] text-black font-['IBM_Plex_Mono'] md:pb-[max(5rem,env(safe-area-inset-bottom))] md:pl-[max(3rem,env(safe-area-inset-left))] md:pr-[max(3rem,env(safe-area-inset-right))] md:pt-[max(5rem,env(safe-area-inset-top))] lg:pl-[max(6rem,env(safe-area-inset-left))] lg:pr-[max(6rem,env(safe-area-inset-right))]">
+        <div className="max-w-[1440px] mx-auto relative">
+          {/* Above the Fold Content - Animates on Load */}
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={personaVariants.container}
+            className="mb-24 md:mb-32"
+          >
           {/* Top Header Section */}
           <Header />
 
@@ -98,9 +100,18 @@ export default function Hero() {
         >
           <LineDivider />
           <div className="pt-12">
-            <SectionHeader title="FEATURED STARTUP" color="bg-cmyk-magenta" />
-            <div className="mt-8 md:mt-12">
-              <FeaturedProject {...portfolioData.featured} />
+            <div className="border-2 border-black bg-white shadow-[6px_6px_0_0_#e31837] overflow-hidden">
+              <div className="bg-cmyk-magenta border-b-2 border-black px-6 py-4 md:px-8 md:py-5">
+                <div className="flex items-center gap-3">
+                  <div className="w-3 h-3 md:w-4 md:h-4 shrink-0 bg-vectorheart-red border-2 border-white" />
+                  <p className="font-['IBM_Plex_Mono'] font-bold text-lg md:text-2xl text-white uppercase leading-none tracking-tight">
+                    Featured Startup
+                  </p>
+                </div>
+              </div>
+              <div className="bg-[#fff8f8] px-4 py-8 md:px-8 md:py-10">
+                <FeaturedProject {...portfolioData.featured} />
+              </div>
             </div>
           </div>
         </motion.div>
@@ -157,6 +168,7 @@ export default function Hero() {
         <Footer />
       </div>
     </div>
+      </HeroCanvas>
     </>
   );
 }

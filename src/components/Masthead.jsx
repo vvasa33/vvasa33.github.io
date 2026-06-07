@@ -20,11 +20,11 @@ export default function Masthead() {
         {portfolioData.hero.newspaperTitle}
       </motion.h1>
       
-      <div className="relative flex items-center justify-center gap-4">
-        <p className="font-['IBM_Plex_Mono'] text-sm md:text-base lg:text-lg text-black bg-black text-white px-2 py-1">
+      <div className="relative flex min-h-[48px] flex-col items-center justify-center gap-3 md:flex-row md:gap-4">
+        <p className="font-['IBM_Plex_Mono'] text-sm md:text-base lg:text-lg text-black bg-black text-white px-3 py-2">
           {formattedDate}
         </p>
-        
+
         <SocialLinks />
       </div>
     </motion.div>

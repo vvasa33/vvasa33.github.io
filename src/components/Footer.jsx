@@ -16,13 +16,13 @@ export default function Footer() {
     <motion.footer 
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true }}
-      variants={personaVariants.angularReveal}
+      viewport={{ once: true, amount: 0.1, margin: "0px 0px 100px 0px" }}
+      variants={personaVariants.item}
       className="border-t-2 border-black mt-16 md:mt-20 pt-10 pb-6 bg-paper relative overflow-hidden"
     >
       <div className="absolute top-0 left-0 w-full h-px bg-black opacity-10" />
       
-      <div className="max-w-[1440px] mx-auto px-4 md:px-12 lg:px-24">
+      <div className="mx-auto max-w-[1440px]">
         <div className="flex flex-col lg:flex-row justify-between items-start gap-10 lg:gap-16">
           
           {/* Brand Column */}
@@ -71,7 +71,7 @@ function SocialLink({ href, icon: Icon, label }) {
       whileTap={{ scale: 0.95 }}
       className="group flex items-center gap-2 font-['IBM_Plex_Mono'] text-sm font-bold uppercase hover:text-cmyk-magenta transition-colors"
     >
-      <div className="p-2 border-2 border-black group-hover:bg-black group-hover:text-white transition-colors shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] group-hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] group-hover:translate-x-0.5 group-hover:translate-y-0.5">
+      <div className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center border-2 border-black p-2 transition-colors group-hover:translate-x-0.5 group-hover:translate-y-0.5 group-hover:bg-black group-hover:text-white shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] group-hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]">
         <Icon size={18} />
       </div>
       <span className="hidden md:inline">{label}</span>

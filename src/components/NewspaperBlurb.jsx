@@ -29,7 +29,7 @@ export default function NewspaperBlurb({
               <div className="h-0.5 md:h-1 bg-black flex-grow origin-left transition-transform duration-500 ease-snappy group-hover:scale-x-95"></div>
             </div>
             
-            <h3 className="font-['Manrope'] text-2xl md:text-5xl uppercase leading-none mb-3 md:mb-4 transition-transform duration-300 ease-snappy">
+            <h3 className="mb-3 break-words font-['Manrope'] text-2xl uppercase leading-none transition-transform duration-300 ease-snappy md:mb-4 md:text-5xl">
               {title}
             </h3>
             

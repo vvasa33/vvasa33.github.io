@@ -42,9 +42,9 @@ export default function FeaturedProject({
   return (
     <motion.div 
       variants={personaVariants.item} 
-      className="border-y-2 border-black py-12 md:py-16 my-8 md:my-16 group"
+      className="border-y-2 border-black py-12 md:py-16 my-0 group"
     >
-      <div className="flex flex-col md:flex-row justify-between items-start gap-8 mb-8 md:mb-12">
+      <div className="mb-8 flex flex-col items-stretch justify-between gap-8 md:mb-12 md:flex-row md:items-start">
         <div>
           <div className="flex items-center gap-3 mb-4">
             <span className="bg-black text-white px-3 py-1 text-xs font-bold uppercase tracking-widest group-hover:bg-cmyk-magenta transition-colors duration-300">
@@ -54,7 +54,7 @@ export default function FeaturedProject({
               2025
             </span>
           </div>
-          <h3 className="font-['Manrope'] text-4xl md:text-6xl uppercase tracking-tight mb-2 transition-transform duration-300 ease-snappy">
+          <h3 className="mb-2 break-words font-['Manrope'] text-2xl uppercase tracking-tight transition-transform duration-300 ease-snappy sm:text-3xl md:text-5xl lg:text-6xl">
             {title}
           </h3>
           <p className="font-['IBM_Plex_Mono'] text-lg text-cmyk-magenta font-bold uppercase">
@@ -83,7 +83,7 @@ export default function FeaturedProject({
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="group/btn flex items-center gap-2 border-2 border-black px-6 py-3 uppercase text-xs tracking-widest font-['IBM_Plex_Mono'] font-bold hover:bg-black hover:text-white transition-colors"
+            className="group/btn inline-flex min-h-[44px] w-full items-center justify-center gap-2 border-2 border-black px-6 py-3 font-['IBM_Plex_Mono'] text-xs font-bold uppercase tracking-widest transition-colors hover:bg-black hover:text-white md:w-auto md:justify-start"
           >
             <span>Visit Project</span>
             <ExternalLink size={14} className="group-hover/btn:translate-x-1 transition-transform" />
