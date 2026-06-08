@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { personaVariants } from '../constants/animations';
-import { getAllPosts } from '../utils/blogLoader';
 
 const TICKER_ITEM_CLASS =
   "font-['IBM_Plex_Mono'] text-xs md:text-sm font-medium px-8 py-2 border-r border-black/20 hover:bg-black hover:text-white transition-colors duration-200 cursor-pointer inline-flex items-center shrink-0";
@@ -19,10 +18,16 @@ function formatTickerLabel(post) {
 }
 
 export default function NewsTicker() {
-  const posts = getAllPosts();
+  const [posts, setPosts] = useState([]);
   const containerRef = useRef(null);
   const measureRef = useRef(null);
   const [repeatCount, setRepeatCount] = useState(6);
+
+  useEffect(() => {
+    import('../utils/blogLoader').then(({ getAllPosts }) => {
+      setPosts(getAllPosts());
+    });
+  }, []);
 
   const displayPosts = posts.length > 0
     ? posts
