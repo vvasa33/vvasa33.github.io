@@ -8,52 +8,40 @@ export default function Footer() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const { tagline } = portfolioData.footer;
   const { name, github, linkedin, email } = portfolioData.personal;
-  const { newspaperTitle: heroTitle } = portfolioData.hero;
 
   return (
-    <motion.footer 
+    <motion.footer
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.1, margin: "0px 0px 100px 0px" }}
+      viewport={{ once: true, amount: 0.1 }}
       variants={personaVariants.item}
-      className="border-t-2 border-black mt-16 md:mt-20 pt-10 pb-6 bg-paper relative overflow-hidden"
+      className="border-t-2 border-black pt-6 pb-4 bg-paper relative"
     >
-      <div className="absolute top-0 left-0 w-full h-px bg-black opacity-10" />
-      
-      <div className="mx-auto max-w-[1440px]">
-        <div className="flex flex-col lg:flex-row justify-between items-start gap-10 lg:gap-16">
-          
-          {/* Brand Column */}
-          <div className="flex-1">
-            <h2 className="font-['Manrope'] font-bold text-3xl md:text-4xl mb-4 tracking-tight uppercase group transition-all duration-300">
-              {heroTitle}
-            </h2>
-            <p className="font-['IBM_Plex_Mono'] text-sm max-w-md text-gray-600 mb-6 leading-relaxed">
-              Security Engineer & Developer. Building secure, scalable systems.
-            </p>
-            
-            <div className="flex gap-4">
-              <SocialLink href={github} icon={Github} label="GitHub" />
-              <SocialLink href={linkedin} icon={Linkedin} label="LinkedIn" />
-              <SocialLink href={`mailto:${email}`} icon={Mail} label="Email" />
-            </div>
-          </div>
-
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+        <div className="flex items-center gap-4">
+          <SocialLink href={github} icon={Github} label="GitHub" />
+          <SocialLink href={linkedin} icon={Linkedin} label="LinkedIn" />
+          <SocialLink href={`mailto:${email}`} icon={Mail} label="Email" />
         </div>
 
-        {/* Bottom Bar */}
-        <div className="mt-10 pt-6 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-4 font-['IBM_Plex_Mono'] text-xs uppercase tracking-wider text-gray-400">
-          <p>© {new Date().getFullYear()} {name}</p>
-          <motion.button 
+        <div className="flex items-center gap-4">
+          <p className="font-['IBM_Plex_Mono'] text-[10px] uppercase tracking-widest text-black/40">
+            © {new Date().getFullYear()} {name}
+          </p>
+          {/* CMYK registration marks */}
+          <div className="flex gap-1">
+            {['bg-cmyk-cyan', 'bg-cmyk-magenta', 'bg-cmyk-yellow', 'bg-black'].map((c, i) => (
+              <div key={i} className={`w-2.5 h-2.5 rounded-full ${c} mix-blend-multiply border border-black/10`} />
+            ))}
+          </div>
+          <motion.button
             onClick={scrollToTop}
-            whileHover={{ y: -5, scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="flex items-center gap-2 hover:text-black transition-colors group px-4 py-2 border border-transparent hover:border-black hover:bg-white hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+            whileHover={{ y: -3 }}
+            whileTap={{ scale: 0.95 }}
+            className="font-['IBM_Plex_Mono'] text-[10px] uppercase tracking-widest text-black/40 hover:text-black transition-colors flex items-center gap-1 cursor-pointer"
           >
-            Back to Top
-            <ArrowUp size={16} className="group-hover:-translate-y-1 transition-transform" />
+            Top <ArrowUp size={10} />
           </motion.button>
         </div>
       </div>

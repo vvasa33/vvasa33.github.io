@@ -1,0 +1,239 @@
+- generic [ref=e4]:
+  - generic [ref=e5]:
+    - generic [ref=e6]:
+      - paragraph [ref=e7]: VOL. 1 - NO. 1
+      - generic [ref=e8]:
+        - generic [ref=e9]: VISWANATH VASA
+        - generic [ref=e10]: •
+        - generic [ref=e11]: VVASA@TERPMAIL.UMD.EDU
+      - paragraph [ref=e12]: EST. JANUARY 1, 2026
+    - generic [ref=e13]:
+      - heading "THE FOUNDER TIMES" [level=1] [ref=e15]
+      - generic [ref=e17]:
+        - generic [ref=e18]:
+          - generic [ref=e19]: Security Engineer
+          - generic [ref=e20]: ✦
+        - generic [ref=e21]:
+          - generic [ref=e22]: Developer
+          - generic [ref=e23]: ✦
+        - generic [ref=e24]:
+          - generic [ref=e25]: UMD
+          - generic [ref=e26]: ✦
+        - generic [ref=e28]: Cybersecurity & Math
+    - generic [ref=e29]:
+      - link "Latest Posts" [ref=e30] [cursor=pointer]:
+        - /url: /blogs
+        - text: Latest Posts
+        - img [ref=e31]
+      - generic [ref=e34]:
+        - generic [ref=e35]: "STARTUPS: TO START A STARTUP — JUNE 6, 2026 — READ →"
+        - generic [ref=e36]: "STARTUPS: TO START A STARTUP — JUNE 6, 2026 — READ →"
+  - generic [ref=e38]:
+    - generic [ref=e40]:
+      - paragraph [ref=e41]: "Section A: Profile"
+      - paragraph [ref=e43]: Hey! I’m Viswanath (Visu), a Computer Science and Applied Mathematics major at the University of Maryland specializing in Cybersecurity and Networking. Throughout my life, I’ve always had a passion for learning and programming, and this portfolio is my love letter to the field in general. The people I’ve met, the projects I’ve worked on, and the concepts I’ve learned have all led up to where I am today.
+      - generic [ref=e44]:
+        - link "vvasa@terpmail.umd.edu" [ref=e45] [cursor=pointer]:
+          - /url: mailto:vvasa@terpmail.umd.edu
+          - img [ref=e46]
+          - generic [ref=e49]: vvasa@terpmail.umd.edu
+        - link "linkedin.com/in/visu-vasa" [ref=e50] [cursor=pointer]:
+          - /url: https://linkedin.com/in/visu-vasa
+          - img [ref=e51]
+          - generic [ref=e55]: linkedin.com/in/visu-vasa
+        - link "github.com/vvasa33" [ref=e56] [cursor=pointer]:
+          - /url: https://github.com/vvasa33
+          - img [ref=e57]
+          - generic [ref=e60]: github.com/vvasa33
+      - generic [ref=e61]:
+        - paragraph [ref=e62]: Key Expertise
+        - paragraph [ref=e63]: Security architecture, IoT systems, cloud infrastructure, and full-stack development.
+      - generic [ref=e64]:
+        - paragraph [ref=e65]: Availability
+        - paragraph [ref=e66]: Open to full-time, contract, and consulting opportunities in security engineering and technical leadership roles.
+      - generic [ref=e67]:
+        - paragraph [ref=e68]: Proven Impact
+        - paragraph [ref=e69]: Reduced operational costs by 80%, achieved 99.9% system uptime, and scaled networks to 15km+ range.
+      - generic [ref=e70]:
+        - paragraph [ref=e71]: Skills Matter
+        - generic [ref=e72]:
+          - generic [ref=e73]:
+            - paragraph [ref=e74]: Programming & Development
+            - generic [ref=e75]:
+              - generic [ref=e76]: Python
+              - generic [ref=e77]: JavaScript
+              - generic [ref=e78]: C
+              - generic [ref=e79]: SQL
+              - generic [ref=e80]: React
+              - generic [ref=e81]: Node.js
+          - generic [ref=e82]:
+            - paragraph [ref=e83]: Systems & Networking
+            - generic [ref=e84]:
+              - generic [ref=e85]: Network Administration
+              - generic [ref=e86]: TCP/IP
+              - generic [ref=e87]: DNS
+              - generic [ref=e88]: IoT Systems
+              - generic [ref=e89]: Device Provisioning
+          - generic [ref=e90]:
+            - paragraph [ref=e91]: Cloud & DevOps
+            - generic [ref=e92]:
+              - generic [ref=e93]: Docker
+              - generic [ref=e94]: CI/CD
+              - generic [ref=e95]: Google Cloud Platform
+              - generic [ref=e96]: AWS
+          - generic [ref=e97]:
+            - paragraph [ref=e98]: Security
+            - generic [ref=e99]:
+              - generic [ref=e100]: Cybersecurity Fundamentals
+              - generic [ref=e101]: Authentication
+              - generic [ref=e102]: Role-Based Access Control
+              - generic [ref=e103]: Secure APIs
+          - generic [ref=e104]:
+            - paragraph [ref=e105]: Data & Analytics
+            - generic [ref=e106]:
+              - generic [ref=e107]: Machine Learning
+              - generic [ref=e108]: Statistical Analysis
+              - generic [ref=e109]: Data Pipelines
+    - generic [ref=e110]:
+      - generic [ref=e111]:
+        - paragraph [ref=e112]: "Section B: The Blog"
+        - generic [ref=e113]:
+          - generic [ref=e114]: Featured Edition
+          - generic [ref=e115]: June 6, 2026
+          - generic [ref=e116]: Startups
+        - heading "To Start a Startup" [level=2] [ref=e117]
+        - paragraph [ref=e118]: By Viswanath Vasa — The Founder Times — June 6, 2026
+        - generic [ref=e119]:
+          - paragraph [ref=e120]: I wasn't always a startup founder. In fact, I was kind of the opposite. In my mind, basically the only real path to gaining stability in life was to go to college, learn how to play with computers, get a job at FAANG or whatever people say is cool, and be happy with that. Startups were the exact opposite.
+          - paragraph [ref=e121]: "It's welcome week. Sophomore year. A suitemate walks in with a crazy idea — IoT networks, long-range comms, real estate monitoring. There's potential. Then the Mohktarzada Hatchery: the mentors who built Rocket Money ($1.5B valuation), and the chance to build something real. We pitched. We got in."
+        - link "Read Full Article" [ref=e123] [cursor=pointer]:
+          - /url: /blog/to-start-a-startup
+          - generic [ref=e124]:
+            - text: Read Full Article
+            - img [ref=e125]
+      - generic [ref=e127]:
+        - paragraph [ref=e128]: "Section B.2: Featured Startup"
+        - generic [ref=e129]:
+          - paragraph [ref=e132]: ★ Startup · IoT Systems
+          - generic [ref=e133]:
+            - paragraph [ref=e134]: SenseGuard, Inc.
+            - paragraph [ref=e135]: Full-Stack Developer & IoT Systems Engineer
+            - paragraph [ref=e136]: Designed and deployed a full-stack security monitoring platform processing 1,000+ telemetry events per day across distributed IoT systems. The platform provides real-time monitoring and analytics for industrial safety and operational efficiency.
+            - generic [ref=e137]:
+              - generic [ref=e138]:
+                - paragraph [ref=e139]: 1,000+
+                - paragraph [ref=e140]: Daily Events
+              - generic [ref=e141]:
+                - paragraph [ref=e142]: 99.9%
+                - paragraph [ref=e143]: Service Uptime
+              - generic [ref=e144]:
+                - paragraph [ref=e145]: 200+
+                - paragraph [ref=e146]: IoT Devices
+              - generic [ref=e147]:
+                - paragraph [ref=e148]: 50+
+                - paragraph [ref=e149]: Deployment Sites
+            - generic [ref=e150]:
+              - generic [ref=e151]:
+                - generic [ref=e152]: React
+                - generic [ref=e153]: Node.js
+                - generic [ref=e154]: PostgreSQL
+                - generic [ref=e155]: Docker
+                - generic [ref=e156]: Google Cloud Platform
+                - generic [ref=e157]: IoT
+              - link "Visit" [ref=e158] [cursor=pointer]:
+                - /url: https://senseguard.dev
+                - text: Visit
+                - img [ref=e159]
+    - generic [ref=e164]:
+      - paragraph [ref=e165]: "Section C: Ledger"
+      - generic [ref=e166]:
+        - paragraph [ref=e167]: Experience
+        - generic [ref=e168]:
+          - generic [ref=e169]:
+            - generic [ref=e170]:
+              - generic [ref=e171]:
+                - paragraph [ref=e172]: Empowering Secure Elections Laboratory
+                - paragraph [ref=e173]: Researcher & Lead Full-Stack Developer
+                - paragraph [ref=e174]: May 2025 – Present
+              - generic [ref=e175]: Current
+            - generic [ref=e176]:
+              - generic [ref=e177]: Flutter
+              - generic [ref=e178]: Firebase
+              - generic [ref=e179]: SQLite
+              - generic [ref=e180]: Dart
+          - generic [ref=e181]:
+            - generic [ref=e182]:
+              - generic [ref=e183]:
+                - paragraph [ref=e184]: Sunrise Scientific
+                - paragraph [ref=e185]: Frontend Developer (Contract)
+                - paragraph [ref=e186]: Dec. 2025 – Present
+              - generic [ref=e187]: Current
+            - generic [ref=e188]:
+              - generic [ref=e189]: React
+              - generic [ref=e190]: TypeScript
+              - generic [ref=e191]: UI/UX Design
+              - generic [ref=e192]: Information Architecture
+          - generic [ref=e193]:
+            - generic [ref=e194]:
+              - generic [ref=e195]:
+                - paragraph [ref=e196]: Haridra Solutions, Inc.
+                - paragraph [ref=e197]: Machine Learning Engineer
+                - paragraph [ref=e198]: Jun. 2023 – Aug. 2024
+              - generic [ref=e199]: Completed
+            - generic [ref=e200]:
+              - generic [ref=e201]: Python
+              - generic [ref=e202]: TensorFlow
+              - generic [ref=e203]: PyTorch
+              - generic [ref=e204]: Scikit-learn
+          - generic [ref=e205]:
+            - generic [ref=e206]:
+              - generic [ref=e207]:
+                - paragraph [ref=e208]: Autonomous Robotics Optimization
+                - paragraph [ref=e209]: Robotics Software Developer
+                - paragraph [ref=e210]: Sep. 2021 – Aug. 2024
+              - generic [ref=e211]: Completed
+            - generic [ref=e212]:
+              - generic [ref=e213]: C
+              - generic [ref=e214]: ARM Assembly
+              - generic [ref=e215]: FTC SDK
+              - generic [ref=e216]: Robotics
+      - generic [ref=e217]:
+        - paragraph [ref=e218]: Education
+        - generic [ref=e219]:
+          - generic [ref=e221]:
+            - img "University of Maryland – College Park" [ref=e222]
+            - generic [ref=e223]:
+              - paragraph [ref=e224]: University of Maryland – College Park
+              - paragraph [ref=e225]: B.S. Computer Science (Cybersecurity) & Applied Mathematics
+              - paragraph [ref=e226]: Expected May 2027
+              - paragraph [ref=e227]: Honors College
+              - paragraph [ref=e228]: Banneker/Key Full Merit Scholar
+            - generic [ref=e229]: "2027"
+          - generic [ref=e231]:
+            - img "CompTIA" [ref=e232]
+            - generic [ref=e233]:
+              - paragraph [ref=e234]: CompTIA
+              - paragraph [ref=e235]: Network+ Certification
+              - paragraph [ref=e236]: Network Administration & Security Fundamentals
+            - generic [ref=e237]: Certified
+  - contentinfo [ref=e239]:
+    - paragraph [ref=e240]: Delivering high-quality code, secure architectures, and the occasional hot take on tabs vs. spaces since 2024.
+    - generic [ref=e241]:
+      - generic [ref=e242]:
+        - link "GitHub" [ref=e243] [cursor=pointer]:
+          - /url: https://github.com/vvasa33
+          - img [ref=e245]
+          - generic [ref=e248]: GitHub
+        - link "LinkedIn" [ref=e249] [cursor=pointer]:
+          - /url: https://linkedin.com/in/visu-vasa
+          - img [ref=e251]
+          - generic [ref=e255]: LinkedIn
+        - link "Email" [ref=e256] [cursor=pointer]:
+          - /url: mailto:vvasa@terpmail.umd.edu
+          - img [ref=e258]
+          - generic [ref=e261]: Email
+      - generic [ref=e262]:
+        - paragraph [ref=e263]: © 2026 Viswanath Vasa
+        - button "Top" [ref=e269] [cursor=pointer]:
+          - text: Top
+          - img [ref=e270]

@@ -72,4 +72,8 @@ html {
     will-change: transform; /* Hint for browser optimization */
     backface-visibility: hidden;
   }
+
+  .ticker-track:hover .animate-ticker {
+    animation-play-state: paused;
+  }
 }

@@ -48,7 +48,7 @@
         "author": "Viswanath Vasa",
         "tag": "FEATURED",
         "paragraphs": [
-          "Hey! I’m Viswanath (Visu), a Computer Science and Applied Mathematics major at the University of Maryland specializing in Cybersecurity and Networking. Throughout my life, I’ve always had a passion for learning and programming, and this portfolio is my love letter to the field in general. The people I’ve met, the projects I’ve worked on, and the concepts I’ve learned have all led up to where I am today.",
+          "Hey! I'm Viswanath (Visu), a Computer Science major at the University of Maryland specializing in Cybersecurity and Networking. Throughout my life, I've always had a passion for learning and programming, and this portfolio is my love letter to the field in general. The people I've met, the projects I've worked on, and the concepts I've learned have all led up to where I am today.",
           "As you peruse the portfolio, feel free to contact me with any questions you have about any projects! You can contact me at vvasa@terpmail.umd.edu, or check out my LinkedIn or my Github pages to learn more!"
         ],
         "sidebar": [
@@ -170,7 +170,7 @@
     {
       "id": "EDU-001",
       "institution": "University of Maryland – College Park",
-      "title": "B.S. Computer Science (Cybersecurity) & Applied Mathematics",
+      "title": "B.S. Computer Science (Cybersecurity)",
       "subtitle": [
         "Honors College",
         "Banneker/Key Full Merit Scholar"
@@ -178,7 +178,7 @@
       "badgeYear": "2027",
       "timeline": "Expected May 2027",
       "type": "academic",
-      "description": "Double major in Computer Science with Cybersecurity specialization and Applied Mathematics. Full merit scholarship recipient.",
+      "description": "Computer Science major with Cybersecurity specialization. Full merit scholarship recipient.",
       "courses": ["Data Structures", "Computer Networks", "Operating Systems", "Cybersecurity", "Probability & Statistics"],
       "institutionLogo": "umd.png"
     },
@@ -393,7 +393,7 @@
         {
           "name": "Statistical Analysis",
           "description": "Applying statistical methods and probability theory to data-driven decision making and model validation.",
-          "context": "Applied Mathematics coursework including Probability & Statistics for analytical problem-solving."
+          "context": "Coursework including Probability & Statistics for analytical problem-solving."
         },
         {
           "name": "Data Pipelines",
@@ -403,7 +403,5 @@
       ]
     }
   ],
-  "footer": {
-    "tagline": "Delivering high-quality code, secure architectures, and the occasional hot take on tabs vs. spaces since 2024."
-  }
+  "footer": {}
 }

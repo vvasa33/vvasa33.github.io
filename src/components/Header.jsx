@@ -1,33 +1,25 @@
 import { motion } from 'framer-motion';
 import { personaVariants } from '../constants/animations';
+import portfolioData from '../data/portfolio.json';
 
 export default function Header() {
-  return (
-    <motion.div 
-      variants={personaVariants.item}
-      className="flex flex-wrap justify-between items-center mb-6 border-b-2 border-black pb-4 gap-3 opacity-60 hover:opacity-100 transition-opacity"
-    >
-      <div className="flex gap-4 md:gap-8">
-        <p className="text-xs md:text-sm font-bold tracking-widest uppercase font-['IBM_Plex_Mono']">Vol. 1</p>
-        <p className="text-xs md:text-sm font-bold tracking-widest uppercase font-['IBM_Plex_Mono']">No. 1</p>
-      </div>
-      
-      {/* CMYK Registration Marks */}
-      <div className="hidden md:flex gap-1">
-        {['bg-cmyk-cyan', 'bg-cmyk-magenta', 'bg-cmyk-yellow', 'bg-black'].map((color, i) => (
-          <motion.div 
-            key={i}
-            whileHover={{ scale: 1.5 }}
-            className={`w-3 h-3 rounded-full ${color} mix-blend-multiply border border-black/10`} 
-          />
-        ))}
-      </div>
+  const { name } = portfolioData.personal;
 
-      <p className="text-xs md:text-sm font-bold tracking-tighter uppercase">
-        Mount Airy, MD
+  return (
+    <motion.div
+      variants={personaVariants.item}
+      className="flex flex-wrap justify-between items-center mb-3 pb-3 border-b border-black gap-y-1 gap-x-4 opacity-60 hover:opacity-100 transition-opacity"
+    >
+      <p className="font-['IBM_Plex_Mono'] text-[10px] md:text-xs font-bold tracking-widest uppercase">
+        VOL. 2 - NO. 3
       </p>
-      <p className="text-xs md:text-sm font-bold tracking-tighter uppercase hidden sm:block">
-        Price: Free
+
+      <p className="font-['IBM_Plex_Mono'] text-[10px] md:text-xs font-bold tracking-widest uppercase">
+        {name.toUpperCase()}
+      </p>
+
+      <p className="font-['IBM_Plex_Mono'] text-[10px] md:text-xs font-bold tracking-widest uppercase">
+        EST. 2026
       </p>
     </motion.div>
   );

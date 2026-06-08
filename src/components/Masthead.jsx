@@ -1,31 +1,45 @@
 import { motion } from 'framer-motion';
-import { getFormattedDate } from '../constants';
-import SocialLinks from './SocialLinks';
 import portfolioData from '../data/portfolio.json';
 import { personaVariants } from '../constants/animations';
 
+const SPECIALIZATIONS = [
+  'Security Engineer',
+  'Developer',
+  'UMD',
+  'Cybersecurity & Networking',
+];
+
 export default function Masthead() {
-  const formattedDate = getFormattedDate();
-
   return (
-    <motion.div 
+    <motion.div
       variants={personaVariants.item}
-      className="text-center mb-10 md:mb-16"
+      className="mb-0"
     >
-      <motion.h1 
-        className="font-['Pixelify_Sans'] font-normal text-3xl md:text-4xl lg:text-5xl text-black mb-5 tracking-wide inline-block cursor-default"
-        whileHover={{ scale: 1.05 }}
-        transition={{ type: "spring", stiffness: 400, damping: 10 }}
-      >
-        {portfolioData.hero.newspaperTitle}
-      </motion.h1>
-      
-      <div className="relative flex min-h-[48px] flex-col items-center justify-center gap-3 md:flex-row md:gap-4">
-        <p className="font-['IBM_Plex_Mono'] text-sm md:text-base lg:text-lg text-black bg-black text-white px-3 py-2">
-          {formattedDate}
-        </p>
+      {/* Big newspaper title */}
+      <div className="border-b-4 border-black pb-4 mb-0">
+        <motion.h1
+          className="font-['Pixelify_Sans'] font-normal text-[clamp(3rem,10vw,8rem)] leading-none text-black text-center cursor-default tracking-tight select-none"
+          whileHover={{ scale: 1.01 }}
+          transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+        >
+          {portfolioData.hero.newspaperTitle.toUpperCase()}
+        </motion.h1>
+      </div>
 
-        <SocialLinks />
+      {/* Subtitle specializations bar */}
+      <div className="border-b-2 border-black py-2 flex items-center justify-center gap-0">
+        <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
+          {SPECIALIZATIONS.map((spec, i) => (
+            <span key={spec} className="flex items-center gap-4">
+              <span className="font-['IBM_Plex_Mono'] text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-black">
+                {spec}
+              </span>
+              {i < SPECIALIZATIONS.length - 1 && (
+                <span className="text-black/40 text-xs select-none">✦</span>
+              )}
+            </span>
+          ))}
+        </div>
       </div>
     </motion.div>
   );
