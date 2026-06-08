@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { personaVariants } from '../constants/animations';
 import portfolioData from '../data/portfolio.json';
 
@@ -14,9 +15,12 @@ export default function Header() {
         VOL. 2 - NO. 3
       </p>
 
-      <p className="font-['IBM_Plex_Mono'] text-[10px] md:text-xs font-bold tracking-widest uppercase">
+      <Link
+        to="/"
+        className="font-['IBM_Plex_Mono'] text-[10px] md:text-xs font-bold tracking-widest uppercase hover:text-cmyk-magenta transition-colors cursor-pointer"
+      >
         {name.toUpperCase()}
-      </p>
+      </Link>
 
       <p className="font-['IBM_Plex_Mono'] text-[10px] md:text-xs font-bold tracking-widest uppercase">
         EST. 2026

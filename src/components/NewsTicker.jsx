@@ -60,7 +60,7 @@ export default function NewsTicker() {
     >
       <Link
         to="/blogs"
-        className="shrink-0 bg-cmyk-magenta text-white px-4 py-2 font-['IBM_Plex_Mono'] text-[10px] md:text-xs font-bold uppercase tracking-widest border-r-2 border-black hover:bg-black transition-colors duration-200 flex items-center gap-2 min-h-[36px]"
+        className="hidden md:flex shrink-0 bg-cmyk-magenta text-white px-4 py-2 font-['IBM_Plex_Mono'] text-[10px] md:text-xs font-bold uppercase tracking-widest border-r-2 border-black hover:bg-black transition-colors duration-200 items-center gap-2 min-h-[36px]"
       >
         Latest Posts
         <ArrowRight size={12} />

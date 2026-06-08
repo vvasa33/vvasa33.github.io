@@ -7,6 +7,7 @@ import { getPostBySlug } from '../utils/blogLoader';
 import SEO from '../components/SEO';
 import { useLayoutEffect } from 'react';
 import Header from '../components/Header';
+import Masthead from '../components/Masthead';
 import Footer from '../components/Footer';
 import { LineDivider } from '../components/SectionDivider';
 import { personaVariants } from '../constants/animations';
@@ -153,6 +154,7 @@ export default function BlogPost() {
           >
             {/* Header Structure */}
             <Header />
+            <Masthead />
             <LineDivider />
 
             {/* Navigation */}

@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import portfolioData from '../data/portfolio.json';
 import { personaVariants } from '../constants/animations';
 
@@ -17,13 +18,15 @@ export default function Masthead() {
     >
       {/* Big newspaper title */}
       <div className="border-b-4 border-black pb-4 mb-0">
-        <motion.h1
-          className="font-['Pixelify_Sans'] font-normal text-[clamp(3rem,10vw,8rem)] leading-none text-black text-center cursor-default tracking-tight select-none"
-          whileHover={{ scale: 1.01 }}
-          transition={{ type: 'spring', stiffness: 400, damping: 20 }}
-        >
-          {portfolioData.hero.newspaperTitle.toUpperCase()}
-        </motion.h1>
+        <Link to="/" className="block text-center cursor-pointer">
+          <motion.h1
+            className="font-['Pixelify_Sans'] font-normal text-[clamp(3rem,10vw,8rem)] leading-none text-black tracking-tight select-none hover:text-cmyk-magenta transition-colors"
+            whileHover={{ scale: 1.01 }}
+            transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+          >
+            {portfolioData.hero.newspaperTitle.toUpperCase()}
+          </motion.h1>
+        </Link>
       </div>
 
       {/* Subtitle specializations bar */}
