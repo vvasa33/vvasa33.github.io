@@ -2,23 +2,72 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { personaVariants } from '../constants/animations';
+import { getAllPosts } from '../utils/blogLoader';
 
-const EXCERPT_PARAGRAPHS = [
-  "I wasn't always a startup founder. In fact, I was kind of the opposite. In my mind, basically the only real path to gaining stability in life was to go to college, learn how to play with computers, get a job at FAANG or whatever people say is cool, and be happy with that. Startups were the exact opposite.",
-  "It's welcome week. Sophomore year. A suitemate walks in with a crazy idea — IoT networks, long-range comms, real estate monitoring. There's potential. Then the Mohktarzada Hatchery: the mentors who built Rocket Money ($1.5B valuation), and the chance to build something real. We pitched. We got in.",
-];
+const TAG_COLOR_MAP = {
+  'bg-cmyk-cyan': 'border-cmyk-cyan text-cmyk-cyan',
+  'bg-cmyk-magenta': 'border-cmyk-magenta text-cmyk-magenta',
+  'bg-highlighter-green': 'border-green-600 text-green-700',
+  'bg-cmyk-yellow': 'border-yellow-500 text-yellow-700',
+  'bg-highlighter-pink': 'border-pink-500 text-pink-600',
+  'bg-cmyk-black': 'border-black text-black',
+};
 
-const POST_SLUG = 'to-start-a-startup';
-const POST_DATE = 'June 6, 2026';
-const POST_TAG = 'Startups';
+function formatPostDate(dateStr) {
+  return new Date(dateStr + 'T00:00:00').toLocaleDateString('en-US', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+  });
+}
+
+function stripMarkdown(text) {
+  return text
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+    .replace(/\*\*([^*]+)\*\*/g, '$1')
+    .replace(/\*([^*]+)\*/g, '$1')
+    .replace(/_{1,2}([^_]+)_{1,2}/g, '$1');
+}
+
+function getExcerptParagraphs(post, max = 4) {
+  const paragraphs = [];
+
+  if (post.excerpt) {
+    paragraphs.push(stripMarkdown(post.excerpt));
+  }
+
+  const contentParagraphs = post.content
+    .split(/\n\n+/)
+    .map((p) => p.trim())
+    .filter((p) => p && !p.startsWith('#') && !p.startsWith('***'));
+
+  for (const paragraph of contentParagraphs) {
+    if (paragraphs.length >= max) break;
+    const plain = stripMarkdown(paragraph);
+    if (!paragraphs.includes(plain)) {
+      paragraphs.push(plain);
+    }
+  }
+
+  return paragraphs.slice(0, max);
+}
 
 export default function FeaturedArticle() {
+  const post = getAllPosts()[0];
+
+  if (!post) {
+    return null;
+  }
+
+  const formattedDate = formatPostDate(post.date);
+  const excerptParagraphs = getExcerptParagraphs(post);
+  const tagColorClasses = TAG_COLOR_MAP[post.color] || TAG_COLOR_MAP['bg-cmyk-magenta'];
+
   return (
     <motion.div
       variants={personaVariants.container}
       className="flex flex-col gap-0 py-8 px-0 lg:px-8"
     >
-      {/* Section label */}
       <motion.p
         variants={personaVariants.item}
         className="font-['IBM_Plex_Mono'] text-xs font-bold uppercase tracking-[0.25em] text-black/50 mb-5"
@@ -26,7 +75,6 @@ export default function FeaturedArticle() {
         Section B: The Blog
       </motion.p>
 
-      {/* Featured edition header bar */}
       <motion.div
         variants={personaVariants.item}
         className="flex items-center gap-3 mb-5 border-b border-black pb-4"
@@ -35,48 +83,48 @@ export default function FeaturedArticle() {
           Featured Edition
         </span>
         <span className="font-['IBM_Plex_Mono'] text-xs text-black/60">
-          {POST_DATE}
+          {formattedDate}
         </span>
-        <span className="font-['IBM_Plex_Mono'] text-[11px] font-bold uppercase tracking-widest border border-cmyk-magenta text-cmyk-magenta px-2 py-0.5">
-          {POST_TAG}
+        <span className={`font-['IBM_Plex_Mono'] text-[11px] font-bold uppercase tracking-widest border px-2 py-0.5 ${tagColorClasses}`}>
+          {post.tag}
         </span>
       </motion.div>
 
-      {/* Article title */}
       <motion.h2
         variants={personaVariants.item}
         className="font-['Manrope'] text-5xl md:text-6xl font-black uppercase leading-none mb-5 tracking-tight"
       >
-        To Start a Startup
+        {post.title}
       </motion.h2>
 
-      {/* Byline */}
       <motion.p
         variants={personaVariants.item}
         className="font-['IBM_Plex_Mono'] text-xs uppercase tracking-[0.15em] text-black/60 mb-7 border-b border-black pb-4"
       >
-        By Viswanath Vasa — The Founder Times — {POST_DATE}
+        By Viswanath Vasa — The Founder Times — {formattedDate}
       </motion.p>
 
-      {/* Article body */}
-      <motion.div
-        variants={personaVariants.container}
-        className="mb-7 space-y-5"
-      >
-        {EXCERPT_PARAGRAPHS.map((para, i) => (
-          <motion.p
-            key={i}
-            variants={personaVariants.item}
-            className="font-['IBM_Plex_Mono'] text-base leading-loose text-gray-800"
+      <motion.div variants={personaVariants.item} className="relative mb-4">
+        <div className="featured-excerpt-fade max-h-52 md:max-h-60 overflow-hidden">
+          <motion.div
+            variants={personaVariants.container}
+            className="space-y-5"
           >
-            {para}
-          </motion.p>
-        ))}
+            {excerptParagraphs.map((para, i) => (
+              <motion.p
+                key={i}
+                variants={personaVariants.item}
+                className="font-['IBM_Plex_Mono'] text-base leading-loose text-gray-800"
+              >
+                {para}
+              </motion.p>
+            ))}
+          </motion.div>
+        </div>
       </motion.div>
 
-      {/* Read full article CTA */}
       <motion.div variants={personaVariants.item} className="mb-8">
-        <Link to={`/blog/${POST_SLUG}`}>
+        <Link to={`/blog/${post.slug}`}>
           <motion.div
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}

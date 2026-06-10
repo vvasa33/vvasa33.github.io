@@ -50,7 +50,7 @@ export default function BlogsPage() {
             <LineDividerBottom />
 
             {/* Navigation / Breadcrumb */}
-            <div className="mb-12 flex flex-col gap-4 border-b-2 border-black pb-4 sm:flex-row sm:items-center sm:justify-between">
+            <div className="mb-12 border-b-2 border-black pb-4">
                <Link 
                 to="/" 
                 className="font-['IBM_Plex_Mono'] inline-flex min-h-[44px] items-center justify-center gap-2 border-2 border-black bg-white px-4 py-2 text-xs font-bold uppercase tracking-widest shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-colors hover:translate-x-[2px] hover:translate-y-[2px] hover:bg-black hover:text-white hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] group"
@@ -58,28 +58,6 @@ export default function BlogsPage() {
                 <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
                 Back to Front Page
               </Link>
-              
-              <div className="hidden md:flex items-center gap-2">
-                <span className="w-3 h-3 bg-cmyk-cyan rounded-full"></span>
-                <span className="font-['IBM_Plex_Mono'] text-xs uppercase tracking-widest">Live Updates</span>
-              </div>
-            </div>
-
-            {/* Page Title Area */}
-            <div className="mb-16">
-              <div className="flex items-center gap-4 mb-4">
-                <div className="h-1 w-12 bg-highlighter-green"></div>
-                <span className="font-['IBM_Plex_Mono'] text-xs font-bold uppercase tracking-[0.35em] text-gray-500">
-                  Technical Bureau
-                </span>
-              </div>
-              <h1 className="mb-6 break-words font-['Manrope'] text-3xl font-bold uppercase tracking-tight sm:text-5xl md:text-7xl">
-                Field Reports
-              </h1>
-              <p className="font-['IBM_Plex_Mono'] text-lg text-gray-800 max-w-3xl border-l-4 border-cmyk-yellow pl-6 py-2">
-                In-depth technical articles covering IoT systems, embedded engineering, security architecture, and software development. 
-                Documenting real-world implementations from the field.
-              </p>
             </div>
 
             {/* News Ticker for extra flair */}
@@ -88,7 +66,7 @@ export default function BlogsPage() {
             </div>
 
             {/* Content Grid */}
-            <SectionHeader title="LATEST DISPATCHES" color="bg-cmyk-magenta" />
+            <SectionHeader title="LATEST PAPERS" color="bg-cmyk-magenta" />
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
               {posts.map((post, index) => (

@@ -76,4 +76,25 @@ html {
   .ticker-track:hover .animate-ticker {
     animation-play-state: paused;
   }
+
+  .featured-excerpt-fade {
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      #000 0%,
+      #000 30%,
+      rgba(0, 0, 0, 0.75) 48%,
+      rgba(0, 0, 0, 0.35) 62%,
+      rgba(0, 0, 0, 0.08) 78%,
+      transparent 92%
+    );
+    mask-image: linear-gradient(
+      to bottom,
+      #000 0%,
+      #000 30%,
+      rgba(0, 0, 0, 0.75) 48%,
+      rgba(0, 0, 0, 0.35) 62%,
+      rgba(0, 0, 0, 0.08) 78%,
+      transparent 92%
+    );
+  }
 }
