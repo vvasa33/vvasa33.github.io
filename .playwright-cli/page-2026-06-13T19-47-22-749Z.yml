@@ -1,0 +1,123 @@
+- generic [ref=e5]:
+  - generic [ref=e6]:
+    - paragraph [ref=e7]: VOL. 2 - NO. 3
+    - link "VISWANATH VASA" [ref=e8] [cursor=pointer]:
+      - /url: /
+    - paragraph [ref=e9]: EST. 2026
+  - generic [ref=e10]:
+    - link "THE FOUNDER TIMES" [ref=e12] [cursor=pointer]:
+      - /url: /
+      - heading "THE FOUNDER TIMES" [level=1] [ref=e13]
+    - generic [ref=e15]: Co-Founder & CTO of SenseGuard, Inc.
+  - link "Back to Reports" [ref=e18] [cursor=pointer]:
+    - /url: /blogs
+    - img [ref=e19]
+    - text: Back to Reports
+  - article [ref=e21]:
+    - generic [ref=e22]:
+      - generic [ref=e23]:
+        - generic [ref=e24]: Analysis
+        - generic [ref=e25]:
+          - img [ref=e26]
+          - time [ref=e28]: June 10, 2026
+        - generic [ref=e29]:
+          - img [ref=e30]
+          - generic [ref=e33]: "Est. Read: 12 min"
+      - heading "Thoughts on AI Usage in Development (and in General!)" [level=1] [ref=e34]
+    - generic [ref=e35]:
+      - generic [ref=e36]:
+        - paragraph [ref=e37]: Before we continue, I'll make a mention that all of these articles are written by me! I don't use AI in any of these articles not because I would find it controversial, but rather because I enjoy typing words out myself and these blogs tend to be me letting my thoughts flow out onto a post.
+        - paragraph [ref=e38]: AI is a really controversial tool, especially right now. There's so much information (and misinformation) going around about the effects it has, plus controversy around its effects in the real world (what do you mean "real world?" Do you mean AR?). At this point, I've heard and read of so many perspectives that people have on its usage, both in general (things that affect normal people) and in the world of software development.
+        - paragraph [ref=e39]: The thoughts expressed in this article add to all of these other blogs and angry twitter posts on what AI is going to do in the future. In addition, you might it fun to play a drinking game where you take a shot whenever I say the word AI; I'll probably be using it a lot.
+        - heading "In General" [level=2] [ref=e40]
+        - paragraph [ref=e41]: Although I am a software engineer, and that's what I use AI the most for, a lot of my friends happen to be people who aren't technical. Most of them are actually in the humanities (so they learn how to use colored pencils and markers), and their takes on AI have actually changed my own impressions that AI has on the environment and whatnot.
+        - heading "AI Isn't Leaving" [level=3] [ref=e42]
+        - paragraph [ref=e43]: "Ok, so first things first: AI isn't leaving anytime soon. I vaguely remember from my networking classes back in high school that people hated the concept of the internet when it first came out. People said that the interconnectedness that it offered would keep people on it all day, that people meeting each other and IRL events would cease to exist. Yet, the internet still exists to this day, and it's hard to not be connected to it in some way. That doesn't mean that the people who were against it were wrong. To this day, social media still has very negative consequences, and cyberbullying on online forums continues to take people's lives."
+        - paragraph [ref=e44]: I think it is a bit unwise to say that AI isn't useful. You can't just say that!!! AI is objectively useful, and if you're saying that Ai isn't, then that means you just haven't found a good use case in your life. No matter how you put it, a model that's able to answer any question and fit its answer around your context is insanely powerful and is something that no one has ever been able to do before. If AI weren't useful, we wouldn't be building data centers just to perform processing for it.
+        - heading "The Environment" [level=3] [ref=e45]
+        - paragraph [ref=e46]:
+          - text: So let's address the
+          - emphasis [ref=e47]:
+            - strong [ref=e48]: very
+          - text: big elephant in the room. Who would've thought that building massive data centers that pull all of the water within a mile radius to cool GPU's would be bad for the environment and for local economies? This issue was exacerbated when Kevin O'Leary decided to build a data center in Utah that would use almost 2x the amount of power the entire state uses currently (you can read about it
+          - link "here" [ref=e49] [cursor=pointer]:
+            - /url: https://www.cbc.ca/news/world/kevin-oleary-data-centre-utah-9.7207716
+          - text: ). The panel approving this project wasn't elected, and local residents weren't able to protest and stop the project. Since then, there've been multiple developments (including O'Leary backing down on some of his claims), but this has definitely made people skeptical of AI in the future.
+        - paragraph [ref=e50]: "Personally, I'm not really versed in environmental studies. I also agree that it's bad that AI is affecting the environment like this (source: I like to garden). To look at this from an objective lens, though, I just don't think there's much we can do other than try to make the technology good enough to not have such an effect. The reality is that these data centers are just going to keep coming, and we as humanity would be holding ourselves back if we don't advance AI. I do think that the corporations handling the development of these data centers should be held to stricter standards, though. Standards that force them to describe exactly the effects that they have on the environment and local populations would bring a lot more transparency to the effects that they're having, and if we find that a data center is going to have a really big effect, then we can stop it and find a better place to have it developed."
+        - paragraph [ref=e51]:
+          - text: However, I
+          - strong [ref=e52]: don't
+          - text: think that we should stop AI center development. As I'm typing this blog out, that seems really soulless to say, but I think it's just the truth that we need to cope with. AI centers won't stop development, so in my mind, it wouldn't make sense to try and slow them down. Rather, I'd like these centers to become better at development and make advances to their operations so that they're less destructive. I think a solution like this would be a lot more realistic and is something that data centers would be happy with. I still do think that there should be stricter standards on transparency, however. This wouldn't slow down development; it would just add accountability and help out people who are being affected.
+        - heading "In School (for Computer Science)" [level=3] [ref=e53]
+        - paragraph [ref=e54]:
+          - text: I'm currently in school right now at the University of Maryland (you can check out more at my website, although you're on it now. Just go
+          - link "here" [ref=e55] [cursor=pointer]:
+            - /url: https://vvasa33.github.io
+          - text: ). I'm also studying computer science, so I'll talk about the effects that AI has had on my major. It wouldn't make much sense for me to comment on AI when it comes to other majors, so I'll save myself that writing.
+        - paragraph [ref=e56]: I'm lucky to say that I've been able to experience what I consider to be the 3 phases of effect that AI has had on the major. There's the first, which is computer science without any of the AI. By that, I mean that AI wasn't big enough for people to be mass-adopting it for projects. Professors didn't bother with putting up borders on their project preventing AI usage. Projects were difficult, but offered a meaningful challenge that taught people how to code in ways that would be useful in real jobs. Cheating was also pretty difficult. The mechanisms were in place to prevent people from copying each other and detecting plagiarism from websites like Stack Overflow.
+        - paragraph [ref=e57]:
+          - text: Then there was AI when it was bad. By that, I mean that it was semi-useful. It was... good, but it wasn't at the point where it could vibe code your whole project for you in one sitting. It was better for you to just ask it questions about what was going on, and have it guide you through the development process. You could
+          - emphasis [ref=e58]: try
+          - text: to have it write code for you, but it would usually be buggy and have tons of issues. It was great for boilerplate, but most people didn't rely on it for actual logic.
+        - paragraph [ref=e59]: "And now we're at the last stage: AI at its most powerful. When you have AI models like Opus and GPT with huge context windows, state of the art reasoning skills, the ability to iterate and fix bugs in real time, and closed loop systems, it's hard to design computer science projects that an AI model can't figure out. Add on top the fact that you need to make sure the projects are possible for the people who aren't using AI, and you can see how this becomes really tough."
+        - heading "How I Think People Should Learn to Code" [level=2] [ref=e60]
+        - paragraph [ref=e61]: I've seen a lot of articles that say that teaching people how to code using AI should be made standardized. In my opinion, this is a horrible idea. A person who's vibe coding without understanding how languages and code work is just going to create a mess. Most people who vibe code these days probably take their knowledge of coding for granted. As vibe coders that understand how code works, I think that understanding has a profound effect on the way that we prompt an LLM. Someone who's prompting solely based off of deliverables they'd like to see are inherently programming at a suboptimal level, since they're not able to be specific about what integrations with other software should look like, or even how their deliverable should be structured on a technical level.
+        - paragraph [ref=e62]:
+          - text: I would hate to see schools try to teach students how to program with AI without teaching them the fundamentals. That's just a disaster waiting to happen. That being said, there
+          - strong [ref=e63]: should
+          - text: be people teaching the correct use of AI. This is something I want to cover in a future article, but teaching people the best way of using AI would reduce the amount of slop in systems and can tighten up workflows for faster development.
+        - heading "AI in Software Development" [level=2] [ref=e64]
+        - paragraph [ref=e65]: Time for the (sort of) boring stuff to start! I think my opinions on AI in software development are really rigid, but make for a much more comprehensive way of developing software.
+        - heading "Should You Even Use It?" [level=3] [ref=e66]
+        - paragraph [ref=e67]:
+          - text: If you're a software engineer and aren't trying to learn how to code or something, the answer to this is a resounding
+          - strong [ref=e68]: YES!!!
+          - text: Weirdly enough, there's conversations online about if you should be using AI or not. I don't think it makes very much sense, though. It's like you're in a race, but you choose to drive an old-school civic over an F1 car. I mean, the civic is cool and all, but the F1 car is a hell of a lot better and much faster. Even though the civic might be more reliable, an F1 car is much faster, and if things break you can always go back and fix them before continuing to move at breakneck speed.
+        - paragraph [ref=e69]: In the same way, programming by yourself can be very reliable and you can test each and every thing you write, but you're moving so much slower than if you were using an AI. If you're talented enough to be able to write enterprise-level code by yourself, then you might as well have an AI companion by your side speeding through code and taking the time to test everything before committing. You get the best of both worlds! You're moving super fast, and you still get the chance to test code and make sure it's good (the analogy of the civic and F1 car starts to break down here, you probably shouldn't put an F1 engine into a civic body).
+        - heading "Guardrails" [level=3] [ref=e70]
+        - paragraph [ref=e71]: Now comes the hard part. How do you use AI properly in a CI/CD environment? Our goal here is to minimize the amount of slop we're producing. Yet we still want to develop as fast as possible. My solution is to build rigidity into a pipeline that can be so influenced by a non-deterministic algorithm.
+        - paragraph [ref=e72]: Let me illustrate this with a few examples.
+        - paragraph [ref=e73]:
+          - text: "Let's imagine there's no guardrails in the system. You just have a production server that you push code up to whenever you feel like it. An AI could write basically anything, compile it, push it up to production, and cause tons of issues. It has so much flexibility within your codebase that it's like letting a horse run free: it can just do whatever, and you won't have good documentation of what's going on. This situation is actually pretty common. SenseGuard was, for a very brief time, like this before we could get our CI/CD in order. A lot of developers probably develop like this, and that can cause a lot of issues and more importantly,"
+          - strong [ref=e74]: tech debt
+          - text: in the future.
+        - paragraph [ref=e75]:
+          - text: Now let's assume there's guardrails. The best guardrails are ones that you put on yourself when writing prompts. Things like making sure an AI is only working within a specific directory, editing only specific files that you believe the AI needs to access, being specific about what feature you need developed and
+          - emphasis [ref=e76]: how
+          - text: it should be done can all make a difference in the pipeline. Having an LLM do a code review, then pushing to a dev branch where yet another AI can ensure things are running smoothly (shoutout E2E testing!) and then finally pushing to production where yet another AI can audit things and make sure pushes worked before finally ending the onslaught of AI.
+        - paragraph [ref=e77]: This article is already getting pretty long, so I'll separate my concerns about guardrails into it (I'll probably link it back to this article once I've finished writing it). For right now, though, I hope these 2 examples show just how important having a good pipeline and having a good sense of how AI should be incorporated into an environment can drastically impact development and give you the best of both worlds.
+        - heading "Conclusion" [level=2] [ref=e78]
+        - paragraph [ref=e79]: Honestly, I feel like I haven't even gotten all of my thoughts out, but any more and this article would be too long for people's attention spans (I blame Instagram Reels for this). I may even write another one depending on how things go. Machine learning models and AI in general is an ever-changing subject and as new models keep coming out, it would be really fun to keep track of everything that's going on.
+        - paragraph [ref=e80]: I've been writing a lot about my startup and development, so for my next article I want to stray away from that. It'll probably be something about running an Arch Linux setup for around 5 months, and what that experience was like (I promise this will be interesting).
+        - paragraph [ref=e81]: That'll conclude this article! Thank you for reading, and have a great rest of your day.
+      - generic [ref=e82]:
+        - generic [ref=e83]:
+          - img [ref=e84]
+          - generic [ref=e87]: "Filed Under: Analysis"
+        - button "Share Link" [ref=e89] [cursor=pointer]:
+          - img [ref=e90]
+          - text: Share Link
+    - link "Return to all Field Reports" [ref=e97] [cursor=pointer]:
+      - /url: /blogs
+      - img [ref=e98]
+      - text: Return to all Field Reports
+  - contentinfo [ref=e100]:
+    - generic [ref=e101]:
+      - generic [ref=e102]:
+        - link "GitHub" [ref=e103] [cursor=pointer]:
+          - /url: https://github.com/vvasa33
+          - img [ref=e105]
+          - generic [ref=e108]: GitHub
+        - link "LinkedIn" [ref=e109] [cursor=pointer]:
+          - /url: https://linkedin.com/in/visu-vasa
+          - img [ref=e111]
+          - generic [ref=e115]: LinkedIn
+        - link "Email" [ref=e116] [cursor=pointer]:
+          - /url: mailto:vvasa@terpmail.umd.edu
+          - img [ref=e118]
+          - generic [ref=e121]: Email
+      - generic [ref=e122]:
+        - paragraph [ref=e123]: © 2026 Viswanath Vasa
+        - button "Top" [ref=e129] [cursor=pointer]:
+          - text: Top
+          - img [ref=e130]
