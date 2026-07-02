@@ -15,7 +15,7 @@ export default function Masthead() {
       <div className="border-b-4 border-black pb-4 mb-0">
         <Link to="/" className="block text-center cursor-pointer">
           <motion.h1
-            className="font-['Pixelify_Sans'] font-normal text-[clamp(3rem,10vw,8rem)] leading-none text-black tracking-tight select-none hover:text-cmyk-magenta transition-colors"
+            className="font-['Playfair_Display_SC'] font-normal text-[clamp(3rem,10vw,8rem)] leading-none text-black tracking-tight select-none hover:text-cmyk-magenta transition-colors"
             whileHover={{ scale: 1.01 }}
             transition={{ type: 'spring', stiffness: 400, damping: 20 }}
           >
