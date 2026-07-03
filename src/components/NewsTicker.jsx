@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useLayoutEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
@@ -22,32 +22,42 @@ export default function NewsTicker() {
   const [posts] = useState(() => getAllPosts());
   const containerRef = useRef(null);
   const measureRef = useRef(null);
-  const [repeatCount, setRepeatCount] = useState(6);
+  const [repeatCount, setRepeatCount] = useState(2);
 
   const displayPosts = posts.length > 0
     ? posts
     : [{ slug: 'blogs', tag: 'News', title: 'Latest News — Stay Tuned', date: '2026-01-01' }];
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const container = containerRef.current;
     const measure = measureRef.current;
     if (!container || !measure) return;
 
+    let isMounted = true;
+
     const updateRepeatCount = () => {
+      if (!isMounted) return;
+
       const containerWidth = container.offsetWidth;
       const setWidth = measure.scrollWidth;
       if (!setWidth) return;
 
       const minPerHalf = Math.max(2, Math.ceil(containerWidth / setWidth) + 1);
-      setRepeatCount(minPerHalf);
+      setRepeatCount((current) => current === minPerHalf ? current : minPerHalf);
     };
 
     updateRepeatCount();
 
     const observer = new ResizeObserver(updateRepeatCount);
     observer.observe(container);
+    observer.observe(measure);
 
-    return () => observer.disconnect();
+    document.fonts?.ready.then(updateRepeatCount);
+
+    return () => {
+      isMounted = false;
+      observer.disconnect();
+    };
   }, [displayPosts.length]);
 
   const singleSet = Array.from({ length: repeatCount }, () => displayPosts).flat();
@@ -78,7 +88,7 @@ export default function NewsTicker() {
       </div>
 
       <div ref={containerRef} className="ticker-track flex-1 overflow-hidden bg-white flex items-center min-w-0">
-        <div className="animate-ticker whitespace-nowrap flex w-fit">
+        <div key={repeatCount} className="animate-ticker whitespace-nowrap flex w-fit">
           {looped.map((post, i) => {
             const href = post.slug === 'blogs' ? '/blogs' : `/blog/${post.slug}`;
 
