@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="The Founder Times">
+  <g id="background">
+    <rect width="512" height="512" fill="#f2f0ea"/>
+  </g>
+  <g id="icon">
+    <g id="letter-f" fill="#000">
+      <path d="M 72 96 H 128 V 360 H 72 Z"/>
+      <path d="M 72 96 H 212 V 152 H 72 Z"/>
+      <path d="M 72 208 H 176 V 264 H 72 Z"/>
+    </g>
+    <g id="letter-t" fill="#000">
+      <path d="M 252 96 H 440 V 152 H 252 Z"/>
+      <path d="M 318 152 H 374 V 360 H 318 Z"/>
+    </g>
+    <g id="accent">
+      <path d="M 72 408 H 440 V 432 H 72 Z" fill="#ec008c"/>
+    </g>
+  </g>
+</svg>
