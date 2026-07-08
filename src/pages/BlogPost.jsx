@@ -124,7 +124,7 @@ export default function BlogPost() {
           <h1 className="font-['Manrope'] text-6xl font-black mb-4 text-cmyk-magenta">404</h1>
           <p className="mb-8 text-xl uppercase tracking-widest">Article Removed or Missing</p>
           <Link 
-            to="/blogs" 
+            to="/writing" 
             className="inline-flex items-center gap-2 font-bold border-2 border-black px-6 py-3 bg-black text-white hover:bg-white hover:text-black transition-all"
           >
             <ArrowLeft className="w-4 h-4" />
@@ -160,7 +160,7 @@ export default function BlogPost() {
             {/* Navigation */}
             <div className="mb-12">
               <Link 
-                to="/blogs" 
+                to="/writing" 
                 className="group inline-flex min-h-[44px] items-center gap-2 border border-black bg-white px-4 py-2 text-xs font-bold uppercase tracking-widest shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all hover:translate-x-[1px] hover:translate-y-[1px] hover:bg-black hover:text-white hover:shadow-none"
               >
                 <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
@@ -192,9 +192,9 @@ export default function BlogPost() {
                 </div>
 
                 <motion.h1 
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={false}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2, type: "spring", stiffness: 400, damping: 20 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 20 }}
                   className="mb-8 break-words font-['Manrope'] text-3xl font-black uppercase leading-[0.9] tracking-tighter text-black sm:text-4xl md:text-6xl lg:text-7xl"
                 >
                   {post.title}
@@ -240,7 +240,7 @@ export default function BlogPost() {
               {/* Back Link Bottom */}
               <div className="mt-16 text-center">
                  <Link 
-                  to="/blogs" 
+                  to="/writing" 
                   className="inline-flex items-center gap-2 font-['Manrope'] text-xl font-bold border-b-2 border-black hover:bg-black hover:text-white transition-colors group"
                 >
                   <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />

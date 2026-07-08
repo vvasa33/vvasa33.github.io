@@ -1,17 +1,8 @@
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { personaVariants } from '../constants/animations';
-import { getAllPosts } from '../utils/blogLoader';
-
-const TAG_COLOR_MAP = {
-  'bg-cmyk-cyan': 'border-cmyk-cyan text-cmyk-cyan',
-  'bg-cmyk-magenta': 'border-cmyk-magenta text-cmyk-magenta',
-  'bg-highlighter-green': 'border-green-600 text-green-700',
-  'bg-cmyk-yellow': 'border-yellow-500 text-yellow-700',
-  'bg-highlighter-pink': 'border-pink-500 text-pink-600',
-  'bg-cmyk-black': 'border-black text-black',
-};
+import { getAllPosts, getPostPreviewParagraphs } from '../utils/blogLoader';
 
 function formatPostDate(dateStr) {
   return new Date(dateStr + 'T00:00:00').toLocaleDateString('en-US', {
@@ -21,38 +12,8 @@ function formatPostDate(dateStr) {
   });
 }
 
-function stripMarkdown(text) {
-  return text
-    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
-    .replace(/\*\*([^*]+)\*\*/g, '$1')
-    .replace(/\*([^*]+)\*/g, '$1')
-    .replace(/_{1,2}([^_]+)_{1,2}/g, '$1');
-}
-
-function getExcerptParagraphs(post, max = 4) {
-  const paragraphs = [];
-
-  if (post.excerpt) {
-    paragraphs.push(stripMarkdown(post.excerpt));
-  }
-
-  const contentParagraphs = post.content
-    .split(/\n\n+/)
-    .map((p) => p.trim())
-    .filter((p) => p && !p.startsWith('#') && !p.startsWith('***'));
-
-  for (const paragraph of contentParagraphs) {
-    if (paragraphs.length >= max) break;
-    const plain = stripMarkdown(paragraph);
-    if (!paragraphs.includes(plain)) {
-      paragraphs.push(plain);
-    }
-  }
-
-  return paragraphs.slice(0, max);
-}
-
 export default function FeaturedArticle() {
+  const reduceMotion = useReducedMotion();
   const post = getAllPosts()[0];
 
   if (!post) {
@@ -60,77 +21,72 @@ export default function FeaturedArticle() {
   }
 
   const formattedDate = formatPostDate(post.date);
-  const excerptParagraphs = getExcerptParagraphs(post);
-  const tagColorClasses = TAG_COLOR_MAP[post.color] || TAG_COLOR_MAP['bg-cmyk-magenta'];
+  const excerptParagraphs = getPostPreviewParagraphs(post);
+  const itemVariants = reduceMotion
+    ? { hidden: { opacity: 1, y: 0 }, visible: { opacity: 1, y: 0 } }
+    : personaVariants.item;
 
   return (
     <motion.div
+      initial={reduceMotion ? false : 'hidden'}
+      animate={reduceMotion ? undefined : 'visible'}
       variants={personaVariants.container}
       className="flex flex-col gap-0 py-8 px-0 lg:px-8"
     >
-      <motion.p
-        variants={personaVariants.item}
-        className="font-['IBM_Plex_Mono'] text-xs font-bold uppercase tracking-[0.25em] text-black/50 mb-5"
+      <motion.div
+        variants={itemVariants}
+        className="mb-4 halftone-wrap overflow-hidden border border-black"
       >
-        Section B: The Blog
-      </motion.p>
+        <img
+          src="https://picsum.photos/seed/visu-vasa-editorial/800/320"
+          alt="Editorial portrait placeholder for Viswanath Vasa"
+          className="w-full h-40 md:h-48 object-cover img-print-look"
+        />
+      </motion.div>
 
       <motion.div
-        variants={personaVariants.item}
-        className="flex items-center gap-3 mb-5 border-b border-black pb-4"
+        variants={itemVariants}
+        className="flex items-center gap-3 mb-4 border-b border-black pb-3"
       >
-        <span className="font-['IBM_Plex_Mono'] text-xs font-black uppercase tracking-[0.2em] bg-black text-white px-3 py-1.5">
-          Featured Edition
-        </span>
         <span className="font-['IBM_Plex_Mono'] text-xs text-black/60">
           {formattedDate}
         </span>
-        <span className={`font-['IBM_Plex_Mono'] text-[11px] font-bold uppercase tracking-widest border px-2 py-0.5 ${tagColorClasses}`}>
+        <span className="font-['IBM_Plex_Mono'] text-[11px] font-bold border border-black px-2 py-0.5 text-black">
           {post.tag}
         </span>
       </motion.div>
 
-      <motion.h2
-        variants={personaVariants.item}
-        className="font-['Manrope'] text-5xl md:text-6xl font-black uppercase leading-none mb-5 tracking-tight"
-      >
+      <h2 className="font-['Manrope'] text-3xl sm:text-4xl md:text-5xl font-black leading-tight mb-4 tracking-tight text-black">
         {post.title}
-      </motion.h2>
+      </h2>
 
-      <motion.p
-        variants={personaVariants.item}
-        className="font-['IBM_Plex_Mono'] text-xs uppercase tracking-[0.15em] text-black/60 mb-7 border-b border-black pb-4"
-      >
-        By Viswanath Vasa — The Founder Times — {formattedDate}
-      </motion.p>
+      <p className="font-['IBM_Plex_Mono'] text-xs text-black/60 mb-6 border-b border-black pb-3">
+        Viswanath Vasa · {formattedDate}
+      </p>
 
-      <motion.div variants={personaVariants.item} className="relative mb-4">
-        <div className="featured-excerpt-fade max-h-52 md:max-h-60 overflow-hidden">
-          <motion.div
-            variants={personaVariants.container}
-            className="space-y-5"
-          >
-            {excerptParagraphs.map((para, i) => (
-              <motion.p
-                key={i}
-                variants={personaVariants.item}
-                className="font-['IBM_Plex_Mono'] text-base leading-loose text-gray-800"
+      <div className="relative mb-4">
+        <div className="featured-excerpt-fade max-h-40 md:max-h-48 overflow-hidden">
+          <div className="space-y-4">
+            {excerptParagraphs.map((para) => (
+              <p
+                key={para}
+                className="font-['IBM_Plex_Mono'] text-sm md:text-base leading-relaxed text-gray-800"
               >
                 {para}
-              </motion.p>
+              </p>
             ))}
-          </motion.div>
+          </div>
         </div>
-      </motion.div>
+      </div>
 
-      <motion.div variants={personaVariants.item} className="mb-8">
-        <Link to={`/blog/${post.slug}`}>
+      <motion.div variants={itemVariants} className="mb-4">
+        <Link to={`/blog/${post.slug}`} className="block w-full sm:w-auto">
           <motion.div
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.97 }}
-            className="inline-flex items-center gap-2 border-2 border-black bg-black text-white px-6 py-3.5 font-['IBM_Plex_Mono'] text-sm font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-colors duration-200 cursor-pointer"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="inline-flex w-full sm:w-auto items-center justify-center gap-2 border-2 border-black bg-black text-white px-6 py-3.5 min-h-[44px] font-['IBM_Plex_Mono'] text-sm font-bold uppercase tracking-widest hover:bg-cmyk-magenta hover:border-cmyk-magenta transition-colors duration-200 cursor-pointer"
           >
-            Read Full Article
+            Read article
             <ArrowRight size={16} />
           </motion.div>
         </Link>

@@ -21,7 +21,7 @@ function ExperienceEntry({ item }) {
         <span
           className={`shrink-0 font-['IBM_Plex_Mono'] text-[10px] font-bold uppercase px-2 py-0.5 border ${
             item.status === 'Current'
-              ? 'border-cmyk-cyan text-cmyk-cyan'
+              ? 'border-cmyk-magenta text-cmyk-magenta'
               : 'border-black/30 text-black/40'
           }`}
         >
@@ -94,17 +94,8 @@ export default function LedgerColumn() {
       variants={personaVariants.container}
       className="flex flex-col gap-7 py-8 pl-0 lg:pl-6"
     >
-      {/* Section label */}
-      <motion.p
-        variants={personaVariants.item}
-        className="font-['IBM_Plex_Mono'] text-xs font-bold uppercase tracking-[0.25em] text-black/50"
-      >
-        Section C: Ledger
-      </motion.p>
-
-      {/* Experience */}
       <motion.div variants={personaVariants.item}>
-        <p className="font-['IBM_Plex_Mono'] text-sm font-black uppercase tracking-[0.2em] border-b-2 border-black pb-1.5 mb-5">
+        <p className="font-['IBM_Plex_Mono'] text-sm font-black border-b-2 border-black pb-1.5 mb-5">
           Experience
         </p>
         <div className="flex flex-col gap-5">
@@ -114,9 +105,8 @@ export default function LedgerColumn() {
         </div>
       </motion.div>
 
-      {/* Education */}
       <motion.div variants={personaVariants.item}>
-        <p className="font-['IBM_Plex_Mono'] text-sm font-black uppercase tracking-[0.2em] border-b-2 border-black pb-1.5 mb-5">
+        <p className="font-['IBM_Plex_Mono'] text-sm font-black border-b-2 border-black pb-1.5 mb-5">
           Education
         </p>
         <div className="flex flex-col gap-5">

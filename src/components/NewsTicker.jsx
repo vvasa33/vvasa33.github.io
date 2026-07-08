@@ -6,19 +6,21 @@ import { personaVariants } from '../constants/animations';
 import { getAllPosts } from '../utils/blogLoader';
 
 const TICKER_ITEM_CLASS =
-  "font-['IBM_Plex_Mono'] text-xs md:text-sm font-medium px-8 py-2 border-r border-black/20 hover:bg-black hover:text-white transition-colors duration-200 cursor-pointer inline-flex items-center shrink-0";
+  "font-['IBM_Plex_Mono'] text-[10px] md:text-xs font-medium px-6 py-1 border-r border-black/20 hover:bg-black hover:text-white transition-colors duration-200 cursor-pointer inline-flex items-center shrink-0";
 
-function formatTickerLabel(post) {
-  const date = new Date(post.date + 'T00:00:00').toLocaleDateString('en-US', {
-    month: 'long',
+function formatShortDate(dateStr) {
+  return new Date(dateStr + 'T00:00:00').toLocaleDateString('en-US', {
+    month: 'short',
     day: 'numeric',
     year: 'numeric',
-  }).toUpperCase();
-
-  return `${post.tag?.toUpperCase() ?? 'NEWS'}: ${post.title.toUpperCase()} — ${date} — READ`;
+  });
 }
 
-export default function NewsTicker() {
+function formatTickerLabel(post) {
+  return `${post.title} · ${formatShortDate(post.date)}`;
+}
+
+export default function NewsTicker({ slim = false }) {
   const [posts] = useState(() => getAllPosts());
   const containerRef = useRef(null);
   const measureRef = useRef(null);
@@ -26,7 +28,9 @@ export default function NewsTicker() {
 
   const displayPosts = posts.length > 0
     ? posts
-    : [{ slug: 'blogs', tag: 'News', title: 'Latest News — Stay Tuned', date: '2026-01-01' }];
+    : [{ slug: 'writing', tag: 'News', title: 'Latest writing coming soon', date: '2026-01-01' }];
+
+  const latestPost = displayPosts[0];
 
   useLayoutEffect(() => {
     const container = containerRef.current;
@@ -68,29 +72,42 @@ export default function NewsTicker() {
       variants={personaVariants.item}
       className="w-full border-y-2 border-black mb-0 overflow-hidden flex items-stretch relative"
     >
+      {/* Mobile: static latest post link */}
+      <div className="md:hidden flex-1 bg-white">
+        <Link
+          to={latestPost.slug === 'writing' ? '/writing' : `/blog/${latestPost.slug}`}
+          className="flex items-center justify-between gap-2 px-4 py-3 min-h-[44px] font-['IBM_Plex_Mono'] text-xs text-black hover:text-cmyk-magenta transition-colors"
+        >
+          <span className="truncate">
+            Latest: {latestPost.title}
+          </span>
+          <ArrowRight size={14} className="shrink-0" />
+        </Link>
+      </div>
+
+      {/* Desktop: scrolling ticker */}
       <Link
-        to="/blogs"
-        className="hidden md:flex shrink-0 bg-cmyk-magenta text-white px-4 py-2 font-['IBM_Plex_Mono'] text-[10px] md:text-xs font-bold uppercase tracking-widest border-r-2 border-black hover:bg-black transition-colors duration-200 items-center gap-2 min-h-[36px]"
+        to="/writing"
+        className={`hidden md:flex shrink-0 bg-cmyk-magenta text-white font-['IBM_Plex_Mono'] text-[10px] font-bold uppercase tracking-widest border-r-2 border-black hover:bg-black transition-colors duration-200 items-center gap-2 ${slim ? 'px-3 py-1 min-h-[28px]' : 'px-4 py-2 min-h-[36px]'}`}
       >
-        Latest Posts
+        Writing
         <ArrowRight size={12} />
       </Link>
 
-      {/* Hidden row used to measure one full set width */}
       <div className="absolute opacity-0 pointer-events-none invisible" aria-hidden="true">
-        <div ref={measureRef} className="flex whitespace-nowrap">
+        <div ref={measureRef} className="hidden md:flex whitespace-nowrap">
           {displayPosts.map((post) => (
             <span key={`measure-${post.slug}`} className={TICKER_ITEM_CLASS}>
-              {formatTickerLabel(post)} →
+              {formatTickerLabel(post)}
             </span>
           ))}
         </div>
       </div>
 
-      <div ref={containerRef} className="ticker-track flex-1 overflow-hidden bg-white flex items-center min-w-0">
+      <div ref={containerRef} className="hidden md:flex ticker-track flex-1 overflow-hidden bg-white items-center min-w-0">
         <div key={repeatCount} className="animate-ticker whitespace-nowrap flex w-fit">
           {looped.map((post, i) => {
-            const href = post.slug === 'blogs' ? '/blogs' : `/blog/${post.slug}`;
+            const href = post.slug === 'writing' ? '/writing' : `/blog/${post.slug}`;
 
             return (
               <Link
@@ -98,7 +115,7 @@ export default function NewsTicker() {
                 to={href}
                 className={TICKER_ITEM_CLASS}
               >
-                {formatTickerLabel(post)} →
+                {formatTickerLabel(post)}
               </Link>
             );
           })}

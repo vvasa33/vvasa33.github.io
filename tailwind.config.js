@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        paper: '#f7f5e8',
+        paper: '#f2f0ea',
         cmyk: {
           cyan: '#00aeef',
           magenta: '#ec008c',

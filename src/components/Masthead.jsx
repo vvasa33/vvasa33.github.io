@@ -2,10 +2,10 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import portfolioData from '../data/portfolio.json';
 import { personaVariants } from '../constants/animations';
-
-const SUBTITLE = 'Co-Founder & CTO of SenseGuard, Inc.';
+import { getNewspaperDate } from '../utils/newspaperDate';
 
 export default function Masthead() {
+  const subtitle = getNewspaperDate();
   return (
     <motion.div
       variants={personaVariants.item}
@@ -26,8 +26,8 @@ export default function Masthead() {
 
       {/* Subtitle bar */}
       <div className="border-b-2 border-black py-2 flex items-center justify-center">
-        <span className="font-['IBM_Plex_Mono'] text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-black">
-          {SUBTITLE}
+        <span className="font-['IBM_Plex_Mono'] text-[10px] md:text-xs font-bold tracking-[0.12em] text-black">
+          {subtitle}
         </span>
       </div>
     </motion.div>

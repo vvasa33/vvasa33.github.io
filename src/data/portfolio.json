@@ -1,12 +1,12 @@
 {
   "meta": {
-    "title": "Security Engineer & Developer",
+    "title": "Viswanath Vasa | Security engineer and developer",
     "description": "Portfolio of Viswanath Vasa, a Security Engineer and Developer specializing in secure software, IoT, and cloud architecture.",
     "canonical": "/"
   },
   "personal": {
     "name": "Viswanath Vasa",
-    "role": "Security Engineer && Developer",
+    "role": "Security engineer and developer",
     "motto": "Building secure systems, one line of code at a time.",
     "email": "vvasa@terpmail.umd.edu",
     "linkedin": "https://linkedin.com/in/visu-vasa",
@@ -48,8 +48,8 @@
         "author": "Viswanath Vasa",
         "tag": "FEATURED",
         "paragraphs": [
-          "Hey! I'm Viswanath (Visu), a Computer Science major at the University of Maryland specializing in Cybersecurity and Networking. Throughout my life, I've always had a passion for learning and programming, and this portfolio is my love letter to the field in general. The people I've met, the projects I've worked on, and the concepts I've learned have all led up to where I am today.",
-          "As you peruse the portfolio, feel free to contact me with any questions you have about any projects! You can contact me at vvasa@terpmail.umd.edu, or check out my LinkedIn or my Github pages to learn more!"
+          "I'm Viswanath (Visu), a CS student at UMD focused on cybersecurity and networking. I build full-stack apps, IoT systems, and the security layers around them. Right now I'm co-founder and CTO at SenseGuard, where we monitor industrial sites with low-power sensors.",
+          "Questions about a project? Email me or find me on LinkedIn and GitHub."
         ],
         "sidebar": [
           {
@@ -77,7 +77,7 @@
         "tag": "EDITORIAL",
         "paragraphs": [
           "Security-first development doesn't mean sacrificing speed or innovation. I implement \"Shift Left\" security practices, integrating vulnerability analysis and threat modeling from day one. This proactive approach has consistently reduced security incidents by over 90% across projects I've led.",
-          "My technical stack emphasizes both performance and protection: React and Next.js for responsive frontends, Node.js and TypeScript for type-safe backends, and automated CI/CD pipelines for reliable deployments. I architect systems that scale efficiently while maintaining strict security standards—proven by SenseGuard's 10+ year battery life and 99.9% uptime metrics."
+          "My technical stack emphasizes both performance and protection: React and Next.js for responsive frontends, Node.js and TypeScript for type-safe backends, and automated CI/CD pipelines for reliable deployments. I architect systems that scale efficiently while maintaining strict security standards, including SenseGuard's long battery life and reliable uptime."
         ],
         "sidebar": [
           {
@@ -132,7 +132,7 @@
     "role": "Full-Stack Developer & IoT Systems Engineer",
     "roleLabel": "Featured Project",
     "description": [
-      "Designed and deployed a full-stack security monitoring platform processing 1,000+ telemetry events per day across distributed IoT systems. The platform provides real-time monitoring and analytics for industrial safety and operational efficiency.",
+      "SenseGuard monitors industrial sites with low-power IoT sensors and a full-stack dashboard. Operators get alerts when something looks wrong, without babysitting every device.",
       "Containerized backend services using Docker and deployed to Google Cloud Platform, supporting CI/CD workflows and maintaining 99.9% service availability. Configured and provisioned 200+ IoT sensors and gateways across 50+ sites, validating end-to-end data pipelines and standardizing device onboarding procedures."
     ],
     "website": "https://senseguard.dev",
@@ -169,7 +169,7 @@
   "education": [
     {
       "id": "EDU-001",
-      "institution": "University of Maryland – College Park",
+      "institution": "University of Maryland - College Park",
       "title": "B.S. Computer Science (Cybersecurity)",
       "subtitle": [
         "Honors College",
@@ -201,7 +201,7 @@
       "company": "University of Maryland",
       "companyLogo": "umd.png",
       "role": "Researcher & Lead Full-Stack Developer",
-      "timeline": "May 2025 – Present",
+      "timeline": "May 2025 - Present",
       "status": "Current",
       "description": [
         "Engineered a secure full-stack Flutter mobile application with a Firebase backend, implementing authentication, role-based access control, and encrypted client-server communication for 2,000+ users.",
@@ -218,7 +218,7 @@
       "company": "Sunrise Scientific",
       "companyLogo": "sunrise.png",
       "role": "Frontend Developer (Contract)",
-      "timeline": "Dec. 2025 – Present",
+      "timeline": "Dec. 2025 - Present",
       "status": "Current",
       "description": [
         "Designed and implemented information architecture and navigation flows across 15+ pages, improving usability and content discoverability for enterprise customers.",
@@ -234,7 +234,7 @@
       "company": "Haridra Solutions, Inc.",
       "companyLogo": "haridra.png",
       "role": "Machine Learning Engineer",
-      "timeline": "Jun. 2023 – Aug. 2024",
+      "timeline": "Jun. 2023 - Aug. 2024",
       "status": "Completed",
       "description": [
         "Engineered machine learning models in Python to support language learning applications, contributing to a 30% increase in student applications to top-tier colleges.",
@@ -250,7 +250,7 @@
       "company": "FTC Robotics",
       "companyLogo": "robotics.png",
       "role": "Robotics Software Developer",
-      "timeline": "Sep. 2021 – Aug. 2024",
+      "timeline": "Sep. 2021 - Aug. 2024",
       "status": "Completed",
       "description": [
         "Optimized autonomous navigation algorithms using C and ARM-specific optimizations, achieving 25%+ performance improvement in real-time systems.",

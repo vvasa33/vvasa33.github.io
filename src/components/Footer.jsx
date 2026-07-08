@@ -3,46 +3,46 @@ import { Github, Linkedin, Mail, ArrowUp } from 'lucide-react';
 import portfolioData from '../data/portfolio.json';
 import { personaVariants } from '../constants/animations';
 
-export default function Footer() {
+export default function Footer({ variant = 'default' }) {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const { name, github, linkedin, email } = portfolioData.personal;
+  const isMinimal = variant === 'minimal';
 
   return (
     <motion.footer
-      initial="hidden"
-      whileInView="visible"
+      initial={isMinimal ? false : 'hidden'}
+      whileInView={isMinimal ? undefined : 'visible'}
+      animate={isMinimal ? undefined : undefined}
       viewport={{ once: true, amount: 0.1 }}
       variants={personaVariants.item}
-      className="border-t-2 border-black pt-6 pb-4 bg-paper relative"
+      className={`border-t-2 border-black bg-paper relative ${isMinimal ? 'pt-3 pb-2 mt-auto' : 'pt-6 pb-4'}`}
     >
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
-        <div className="flex items-center gap-4">
-          <SocialLink href={github} icon={Github} label="GitHub" />
-          <SocialLink href={linkedin} icon={Linkedin} label="LinkedIn" />
-          <SocialLink href={`mailto:${email}`} icon={Mail} label="Email" />
-        </div>
+      <div className={`flex ${isMinimal ? 'justify-between items-center' : 'flex-col sm:flex-row justify-between items-start sm:items-center'} gap-3`}>
+        {!isMinimal && (
+          <div className="flex items-center gap-4">
+            <SocialLink href={github} icon={Github} label="GitHub" />
+            <SocialLink href={linkedin} icon={Linkedin} label="LinkedIn" />
+            <SocialLink href={`mailto:${email}`} icon={Mail} label="Email" />
+          </div>
+        )}
 
         <div className="flex items-center gap-4">
           <p className="font-['IBM_Plex_Mono'] text-[10px] uppercase tracking-widest text-black/40">
             © {new Date().getFullYear()} {name}
           </p>
-          {/* CMYK registration marks */}
-          <div className="flex gap-1">
-            {['bg-cmyk-cyan', 'bg-cmyk-magenta', 'bg-cmyk-yellow', 'bg-black'].map((c, i) => (
-              <div key={i} className={`w-2.5 h-2.5 rounded-full ${c} mix-blend-multiply border border-black/10`} />
-            ))}
-          </div>
-          <motion.button
-            onClick={scrollToTop}
-            whileHover={{ y: -3 }}
-            whileTap={{ scale: 0.95 }}
-            className="font-['IBM_Plex_Mono'] text-[10px] uppercase tracking-widest text-black/40 hover:text-black transition-colors flex items-center gap-1 cursor-pointer"
-          >
-            Top <ArrowUp size={10} />
-          </motion.button>
+          {!isMinimal && (
+            <motion.button
+              onClick={scrollToTop}
+              whileHover={{ y: -3 }}
+              whileTap={{ scale: 0.95 }}
+              className="font-['IBM_Plex_Mono'] text-[10px] uppercase tracking-widest text-black/40 hover:text-black transition-colors flex items-center gap-1 cursor-pointer min-h-[44px]"
+            >
+              Top <ArrowUp size={10} />
+            </motion.button>
+          )}
         </div>
       </div>
     </motion.footer>
@@ -51,7 +51,7 @@ export default function Footer() {
 
 function SocialLink({ href, icon: Icon, label }) {
   return (
-    <motion.a 
+    <motion.a
       href={href}
       target="_blank"
       rel="noopener noreferrer"

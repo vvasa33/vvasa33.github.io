@@ -30,7 +30,7 @@ export default function BlogSection() {
       </motion.div>
 
       <div className="mt-12 text-center">
-        <Link to="/blogs">
+        <Link to="/writing">
           <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
