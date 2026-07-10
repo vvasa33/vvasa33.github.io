@@ -11,9 +11,9 @@ const NAV_ITEMS = [
 ];
 
 const linkClass = (isActive) =>
-  `font-['IBM_Plex_Mono'] text-xs font-bold uppercase tracking-widest transition-colors inline-flex items-center min-h-[44px] px-1 ${
+  `relative font-['IBM_Plex_Mono'] text-xs font-bold uppercase tracking-widest transition-colors inline-flex items-center min-h-[44px] px-1 ${
     isActive
-      ? 'text-cmyk-magenta underline underline-offset-4'
+      ? 'text-cmyk-magenta'
       : 'text-black hover:text-cmyk-magenta'
   }`;
 
@@ -61,6 +61,13 @@ export default function InlineNav() {
             className={linkClass(isActive)}
           >
             {item.label}
+            {isActive && (
+              <motion.span
+                layoutId="nav-underline"
+                className="absolute bottom-1 left-0 right-0 h-0.5 bg-cmyk-magenta"
+                transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+              />
+            )}
           </Link>
         );
       })}

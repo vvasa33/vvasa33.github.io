@@ -1,8 +1,9 @@
 import { motion, useReducedMotion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-import { personaVariants } from '../constants/animations';
+import { personaVariants, printVariants } from '../constants/animations';
 import { getAllPosts, getPostPreviewParagraphs } from '../utils/blogLoader';
+import PressRevealText from './motion/PressRevealText';
 
 function formatPostDate(dateStr) {
   return new Date(dateStr + 'T00:00:00').toLocaleDateString('en-US', {
@@ -26,6 +27,13 @@ export default function FeaturedArticle() {
     ? { hidden: { opacity: 1, y: 0 }, visible: { opacity: 1, y: 0 } }
     : personaVariants.item;
 
+  const halftoneVariants = reduceMotion
+    ? {
+        hidden: { clipPath: 'inset(0 0 0 0)', opacity: 1 },
+        visible: { clipPath: 'inset(0 0 0 0)', opacity: 1 },
+      }
+    : printVariants.halftoneReveal;
+
   return (
     <motion.div
       initial={reduceMotion ? false : 'hidden'}
@@ -34,14 +42,23 @@ export default function FeaturedArticle() {
       className="flex flex-col gap-0 py-8 px-0 lg:px-8"
     >
       <motion.div
-        variants={itemVariants}
-        className="mb-4 halftone-wrap overflow-hidden border border-black"
+        variants={halftoneVariants}
+        className="mb-4 halftone-wrap overflow-hidden border border-black relative"
       >
         <img
           src="https://picsum.photos/seed/visu-vasa-editorial/800/320"
           alt="Editorial portrait placeholder for Viswanath Vasa"
           className="w-full h-40 md:h-48 object-cover img-print-look"
         />
+        {!reduceMotion && (
+          <motion.div
+            className="absolute inset-0 pointer-events-none z-20 bg-[radial-gradient(circle,#000_1px,transparent_1.5px)] bg-[length:4px_4px] opacity-0"
+            variants={printVariants.halftoneOverlay}
+            initial="hidden"
+            animate="visible"
+            aria-hidden="true"
+          />
+        )}
       </motion.div>
 
       <motion.div
@@ -57,7 +74,7 @@ export default function FeaturedArticle() {
       </motion.div>
 
       <h2 className="font-['Manrope'] text-3xl sm:text-4xl md:text-5xl font-black leading-tight mb-4 tracking-tight text-black">
-        {post.title}
+        <PressRevealText text={post.title} mode="word" as="span" />
       </h2>
 
       <p className="font-['IBM_Plex_Mono'] text-xs text-black/60 mb-6 border-b border-black pb-3">

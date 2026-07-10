@@ -2,18 +2,16 @@ import { motion } from 'framer-motion';
 import { Mail, Linkedin, Github } from 'lucide-react';
 import { personaVariants } from '../constants/animations';
 import portfolioData from '../data/portfolio.json';
+import ScrollReveal from './motion/ScrollReveal';
+import InkBleedTag from './motion/InkBleedTag';
 
 export default function ProfileColumn() {
   const { personal, hero, skills } = portfolioData;
   const { professionalOverview } = hero.blurbs;
 
   return (
-    <motion.div
-      variants={personaVariants.container}
-      className="flex flex-col gap-6 py-8 pr-0 lg:pr-6"
-      id="contact"
-    >
-      <motion.div variants={personaVariants.item}>
+    <ScrollReveal variant="container" className="flex flex-col gap-6 py-8 pr-0 lg:pr-6" amount={0.15}>
+      <motion.div variants={personaVariants.item} id="contact">
         <p className="font-['IBM_Plex_Mono'] text-sm leading-relaxed text-gray-800">
           {professionalOverview.paragraphs[0]}
         </p>
@@ -53,24 +51,24 @@ export default function ProfileColumn() {
         </p>
         <div className="flex flex-col gap-4">
           {skills.map((category) => (
-            <div key={category.category}>
+            <motion.div key={category.category} variants={personaVariants.item}>
               <p className="font-['IBM_Plex_Mono'] text-[11px] font-bold text-black/60 mb-1.5">
                 {category.category}
               </p>
               <div className="flex flex-wrap gap-1.5">
                 {category.items.map((skill) => (
-                  <span
+                  <InkBleedTag
                     key={skill.name}
                     className="font-['IBM_Plex_Mono'] text-[11px] border border-black px-2 py-0.5 font-medium text-black hover:border-cmyk-magenta hover:text-cmyk-magenta transition-colors"
                   >
                     {skill.name}
-                  </span>
+                  </InkBleedTag>
                 ))}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </motion.div>
-    </motion.div>
+    </ScrollReveal>
   );
 }

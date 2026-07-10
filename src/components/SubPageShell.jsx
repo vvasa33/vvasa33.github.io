@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
-import { personaVariants } from '../constants/animations';
+import { printVariants } from '../constants/animations';
 import SEO from './SEO';
 import Header from './Header';
 import CompactNameplate from './CompactNameplate';
@@ -17,12 +17,18 @@ export default function SubPageShell({ title, description, canonical, children }
           <motion.div
             initial="hidden"
             animate="visible"
-            variants={personaVariants.container}
+            variants={printVariants.subPageContainer}
           >
-            <Header />
-            <CompactNameplate />
-            <InlineNav />
-            <div className="py-4 border-b border-black mb-8">
+            <motion.div variants={printVariants.subPageItem}>
+              <Header />
+            </motion.div>
+            <motion.div variants={printVariants.subPageItem}>
+              <CompactNameplate />
+            </motion.div>
+            <motion.div variants={printVariants.subPageItem}>
+              <InlineNav />
+            </motion.div>
+            <motion.div variants={printVariants.subPageItem} className="py-4 border-b border-black mb-8">
               <Link
                 to="/"
                 className="font-['IBM_Plex_Mono'] inline-flex min-h-[44px] items-center gap-2 border-2 border-black bg-white px-4 py-2 text-xs font-bold uppercase tracking-widest shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-colors hover:translate-x-[2px] hover:translate-y-[2px] hover:bg-black hover:text-white hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] group"
@@ -30,11 +36,13 @@ export default function SubPageShell({ title, description, canonical, children }
                 <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
                 Back to Front Page
               </Link>
-            </div>
-            {children}
-            <div className="mt-12">
+            </motion.div>
+            <motion.div variants={printVariants.subPageItem}>
+              {children}
+            </motion.div>
+            <motion.div variants={printVariants.subPageItem} className="mt-12">
               <Footer variant="minimal" />
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </div>

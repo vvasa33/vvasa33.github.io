@@ -10,7 +10,7 @@ import Header from '../components/Header';
 import Masthead from '../components/Masthead';
 import Footer from '../components/Footer';
 import { LineDivider } from '../components/SectionDivider';
-import { personaVariants } from '../constants/animations';
+import { printVariants } from '../constants/animations';
 
 export default function BlogPost() {
   const { slug } = useParams();
@@ -150,7 +150,7 @@ export default function BlogPost() {
           <motion.div
             initial="hidden"
             animate="visible"
-            variants={personaVariants.container}
+            variants={printVariants.subPageContainer}
           >
             {/* Header Structure */}
             <Header />
@@ -178,10 +178,10 @@ export default function BlogPost() {
                   <div className="flex items-center gap-2">
                     <Calendar className="w-4 h-4" />
                     <time>
-                      {new Date(post.date).toLocaleDateString('en-US', { 
-                        year: 'numeric', 
-                        month: 'long', 
-                        day: 'numeric' 
+                      {new Date(post.date + 'T00:00:00').toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric',
                       })}
                     </time>
                   </div>
@@ -191,19 +191,25 @@ export default function BlogPost() {
                   </div>
                 </div>
 
-                <motion.h1 
-                  initial={false}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                <motion.h1
+                  initial="hidden"
+                  animate="visible"
+                  variants={printVariants.subPageItem}
                   className="mb-8 break-words font-['Manrope'] text-3xl font-black uppercase leading-[0.9] tracking-tighter text-black sm:text-4xl md:text-6xl lg:text-7xl"
                 >
                   {post.title}
                 </motion.h1>
 
                 {post.excerpt && (
-                  <p className="text-xl md:text-2xl leading-relaxed font-medium text-gray-700 border-l-4 border-black pl-6 py-2">
+                  <motion.p
+                    initial="hidden"
+                    animate="visible"
+                    variants={printVariants.subPageItem}
+                    transition={{ delay: 0.08 }}
+                    className="text-xl md:text-2xl leading-relaxed font-medium text-gray-700 border-l-4 border-black pl-6 py-2"
+                  >
                     {post.excerpt}
-                  </p>
+                  </motion.p>
                 )}
               </header>
 

@@ -33,7 +33,7 @@ export default function ArticleCard({
       variants={cardVariants}
       whileHover="hover"
       whileTap="tap"
-      className="group block border-2 border-black bg-white relative z-10 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 transition-shadow duration-200 h-full flex flex-col"
+      className="group block border-2 border-black bg-white relative z-10 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 active:translate-x-[2px] active:translate-y-[2px] transition-shadow duration-200 h-full flex flex-col"
     >
       <div className="p-6 md:p-8 flex-grow">
         <div className="flex justify-between items-start mb-4">

@@ -5,6 +5,7 @@ import { ArrowRight, ExternalLink } from 'lucide-react';
 import { personaVariants } from '../constants/animations';
 import portfolioData from '../data/portfolio.json';
 import { resolveImagePath } from '../utils/imagePath';
+import SenseGuardKineticSting from './motion/SenseGuardKineticSting';
 
 const RELATED_POSTS = [
   { slug: 'to-start-a-startup', title: 'To Start a Startup' },
@@ -95,7 +96,11 @@ export default function SenseGuardPromo({ variant = 'teaser' }) {
         >
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 flex-1 min-w-0">
           <motion.div variants={itemVariants}>
-            <LogoMark company={featured.company} logoSrc={logoSrc} />
+            {isEdition ? (
+              <LogoMark company={featured.company} logoSrc={logoSrc} />
+            ) : (
+              <SenseGuardKineticSting />
+            )}
           </motion.div>
 
           <div className="flex flex-col gap-3 min-w-0">

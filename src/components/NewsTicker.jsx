@@ -1,5 +1,5 @@
 import { useLayoutEffect, useRef, useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { personaVariants } from '../constants/animations';
@@ -21,6 +21,7 @@ function formatTickerLabel(post) {
 }
 
 export default function NewsTicker({ slim = false }) {
+  const reduceMotion = useReducedMotion();
   const [posts] = useState(() => getAllPosts());
   const containerRef = useRef(null);
   const measureRef = useRef(null);
@@ -86,13 +87,20 @@ export default function NewsTicker({ slim = false }) {
       </div>
 
       {/* Desktop: scrolling ticker */}
-      <Link
-        to="/writing"
-        className={`hidden md:flex shrink-0 bg-cmyk-magenta text-white font-['IBM_Plex_Mono'] text-[10px] font-bold uppercase tracking-widest border-r-2 border-black hover:bg-black transition-colors duration-200 items-center gap-2 ${slim ? 'px-3 py-1 min-h-[28px]' : 'px-4 py-2 min-h-[36px]'}`}
+      <motion.div
+        initial={reduceMotion ? false : { x: -24, opacity: 0 }}
+        animate={reduceMotion ? undefined : { x: 0, opacity: 1 }}
+        transition={{ delay: 0.35, duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+        className="hidden md:flex shrink-0"
       >
-        Writing
-        <ArrowRight size={12} />
-      </Link>
+        <Link
+          to="/writing"
+          className={`flex bg-cmyk-magenta text-white font-['IBM_Plex_Mono'] text-[10px] font-bold uppercase tracking-widest border-r-2 border-black hover:bg-black transition-colors duration-200 items-center gap-2 ${slim ? 'px-3 py-1 min-h-[28px]' : 'px-4 py-2 min-h-[36px]'}`}
+        >
+          Writing
+          <ArrowRight size={12} />
+        </Link>
+      </motion.div>
 
       <div className="absolute opacity-0 pointer-events-none invisible" aria-hidden="true">
         <div ref={measureRef} className="hidden md:flex whitespace-nowrap">

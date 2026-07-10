@@ -2,10 +2,11 @@ import { motion } from 'framer-motion';
 import { personaVariants } from '../constants/animations';
 import portfolioData from '../data/portfolio.json';
 import { resolveImagePath } from '../utils/imagePath';
+import ScrollReveal from './motion/ScrollReveal';
 
 function ExperienceEntry({ item }) {
   return (
-    <div className="border-b border-black/20 pb-5 last:border-0 last:pb-0">
+    <motion.div variants={personaVariants.item} className="border-b border-black/20 pb-5 last:border-0 last:pb-0">
       <div className="flex items-start gap-3 mb-2">
         <div className="flex-1 min-w-0">
           <p className="font-['IBM_Plex_Mono'] text-xs font-black uppercase tracking-wide leading-tight">
@@ -38,14 +39,14 @@ function ExperienceEntry({ item }) {
           </span>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }
 
 function EducationEntry({ item }) {
   const logo = resolveImagePath(item.institutionLogo);
   return (
-    <div className="border-b border-black/20 pb-5 last:border-0 last:pb-0">
+    <motion.div variants={personaVariants.item} className="border-b border-black/20 pb-5 last:border-0 last:pb-0">
       <div className="flex items-start gap-3">
         {logo && (
           <img
@@ -82,7 +83,7 @@ function EducationEntry({ item }) {
           {item.badgeYear}
         </span>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -90,10 +91,7 @@ export default function LedgerColumn() {
   const { experience, education } = portfolioData;
 
   return (
-    <motion.div
-      variants={personaVariants.container}
-      className="flex flex-col gap-7 py-8 pl-0 lg:pl-6"
-    >
+    <ScrollReveal variant="container" className="flex flex-col gap-7 py-8 pl-0 lg:pl-6" amount={0.15}>
       <motion.div variants={personaVariants.item}>
         <p className="font-['IBM_Plex_Mono'] text-sm font-black border-b-2 border-black pb-1.5 mb-5">
           Experience
@@ -115,6 +113,6 @@ export default function LedgerColumn() {
           ))}
         </div>
       </motion.div>
-    </motion.div>
+    </ScrollReveal>
   );
 }

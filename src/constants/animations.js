@@ -93,3 +93,86 @@ export const personaVariants = {
     scale: 0.95
   }
 };
+
+// Print / newspaper metaphor variants
+export const printVariants = {
+  letter: {
+    hidden: { scaleY: 0.3, opacity: 0, originY: 1 },
+    visible: (i) => ({
+      scaleY: 1,
+      opacity: 1,
+      transition: {
+        delay: i * 0.04,
+        type: 'spring',
+        stiffness: 500,
+        damping: 28,
+      },
+    }),
+  },
+  word: {
+    hidden: { scaleY: 0.4, opacity: 0, originY: 1 },
+    visible: (i) => ({
+      scaleY: 1,
+      opacity: 1,
+      transition: {
+        delay: i * 0.08,
+        type: 'spring',
+        stiffness: 400,
+        damping: 22,
+      },
+    }),
+  },
+  halftoneReveal: {
+    hidden: {
+      clipPath: 'inset(0 100% 0 0)',
+      opacity: 0.6,
+    },
+    visible: {
+      clipPath: 'inset(0 0% 0 0)',
+      opacity: 1,
+      transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] },
+    },
+  },
+  halftoneOverlay: {
+    hidden: { opacity: 0.55 },
+    visible: {
+      opacity: 0.2,
+      transition: { duration: 0.5, delay: 0.35, ease: 'easeOut' },
+    },
+  },
+  scrollContainer: {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.08, delayChildren: 0.05 },
+    },
+  },
+  pageTurn: {
+    initial: { opacity: 0, y: 12 },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.3, ease: [0.16, 1, 0.3, 1] },
+    },
+    exit: {
+      opacity: 0,
+      y: -8,
+      transition: { duration: 0.25, ease: [0.16, 1, 0.3, 1] },
+    },
+  },
+  subPageContainer: {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.06, delayChildren: 0.04 },
+    },
+  },
+  subPageItem: {
+    hidden: { y: 16, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.35, ease: [0.16, 1, 0.3, 1] },
+    },
+  },
+};

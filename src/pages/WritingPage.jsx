@@ -6,7 +6,7 @@ import SubPageShell from '../components/SubPageShell';
 import SectionHeader from '../components/SectionHeader';
 import ArticleCard from '../components/ArticleCard';
 import NewsTicker from '../components/NewsTicker';
-import { personaVariants } from '../constants/animations';
+import { printVariants } from '../constants/animations';
 
 export default function WritingPage() {
   const posts = getAllPosts();
@@ -25,9 +25,14 @@ export default function WritingPage() {
         <NewsTicker slim />
       </div>
       <SectionHeader title="Latest Papers" color="bg-cmyk-magenta" />
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={printVariants.subPageContainer}
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12"
+      >
         {posts.map((post) => (
-          <motion.div key={post.slug} variants={personaVariants.item} className="h-full">
+          <motion.div key={post.slug} variants={printVariants.subPageItem} className="h-full">
             <ArticleCard
               href={`/blog/${post.slug}`}
               tag={post.tag}
@@ -37,7 +42,7 @@ export default function WritingPage() {
             />
           </motion.div>
         ))}
-      </div>
+      </motion.div>
       {posts.length === 0 && (
         <div className="text-center py-24 border-4 border-double border-gray-300 bg-gray-50 mb-12">
           <div className="inline-block p-4 rounded-full bg-gray-200 mb-4">
