@@ -77,6 +77,22 @@ html {
     animation-play-state: paused;
   }
 
+  .masthead-title-lock,
+  .compact-nameplate-title-lock {
+    container-type: inline-size;
+  }
+
+  .masthead-title {
+    white-space: nowrap;
+    /* ~9.8em wordmark: 9.9cqw keeps one line with a little inset. */
+    font-size: clamp(1.15rem, 9.9cqw, 8rem);
+  }
+
+  .compact-nameplate-title {
+    white-space: nowrap;
+    font-size: clamp(1.1rem, 9.9cqw, 2.25rem);
+  }
+
   .featured-excerpt-fade {
     -webkit-mask-image: linear-gradient(
       to bottom,

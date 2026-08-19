@@ -9,10 +9,10 @@ export default function CompactNameplate() {
   const subtitle = getNewspaperDate();
 
   return (
-    <motion.div variants={personaVariants.item} className="border-b-2 border-black pb-3 mb-0">
+    <motion.div variants={personaVariants.item} className="compact-nameplate-title-lock border-b-2 border-black pb-3 mb-0">
       <Link to="/" className="block text-center cursor-pointer group">
         <motion.h1
-          className="font-['Playfair_Display_SC'] font-normal text-[clamp(1.5rem,4vw,2.25rem)] leading-none text-black tracking-tight select-none group-hover:text-cmyk-magenta transition-colors"
+          className="compact-nameplate-title font-['Playfair_Display_SC'] font-normal leading-none text-black tracking-tight select-none group-hover:text-cmyk-magenta transition-colors"
           whileHover={{ scale: 1.005 }}
           transition={{ type: 'spring', stiffness: 400, damping: 20 }}
         >
