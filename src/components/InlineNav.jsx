@@ -22,7 +22,7 @@ export default function InlineNav() {
     <motion.nav
       aria-label="Site sections"
       variants={personaVariants.item}
-      className="relative flex items-center justify-center py-2 pr-[5.75rem] sm:pr-24 border-b border-black"
+      className="relative flex items-center justify-center py-2 px-[5.75rem] sm:px-24 border-b border-black"
     >
       <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
         {NAV_ITEMS.map((item) => {
@@ -58,7 +58,7 @@ export default function InlineNav() {
           height={31}
           alt="vvasa33"
           decoding="async"
-          className="block h-auto w-[72px] sm:w-[88px] max-w-full aspect-[88/31] border border-black object-contain [image-rendering:pixelated]"
+          className="block h-auto w-[72px] sm:w-[88px] max-w-full aspect-[88/31] object-contain [image-rendering:pixelated]"
         />
       </a>
     </motion.nav>
