@@ -13,6 +13,8 @@ test.describe('Homepage', () => {
     await expect(nav.getByRole('link', { name: 'Work' })).toBeVisible();
     await expect(nav.getByRole('link', { name: 'Writing' })).toBeVisible();
     await expect(nav.getByRole('link', { name: 'SenseGuard' })).toBeVisible();
+    await expect(nav.getByRole('link', { name: 'Contact' })).toHaveCount(0);
+    await expect(nav.getByRole('link', { name: 'vvasa33' })).toBeVisible();
   });
 
   test('section eyebrows are removed', async ({ page }) => {
